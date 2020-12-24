@@ -3,8 +3,7 @@
 *::after {
     box-sizing: border-box;
 }
-
-li {
+.ment1,.ment2,.listment {
     list-style-type: none;
     font-size: 2.5em;
     margin-top: 1em;

@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "odoyApp/secondPage.css" %}'>
+    <title>Result Page</title>
+    <style>
+
+        ul#navi {
+            width: 200px;
+            text-indent: 10px;
+            background-color: #f4f4f4;
+        }
+    
+        ul#navi,
+        ul#navi ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    
+        .group {
+            margin-bottom: 3px;
+        }
+    
+        .group div.title {
+            height: 10px;
+            line-height: 10px;
+            background: #9ab92e;
+            cursor: pointer;
+        }
+    
+        ul.sub li {
+            margin-bottom: 2px;
+            height: 10px;
+            line-height: 10px;
+            background: #f4f4f4;
+            cursor: pointer;
+        }
+    
+        ul.sub li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #000;
+        }
+    
+        ul.sub li:hover {
+            background: #cf0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="navi">
+        <li class="group">
+            <div class="title">title 1</div>
+            <ul class="sub">
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub1</a></li>
+            </ul>
+        </li>
+        <li class="group">
+            <div class="title">title 2</div>
+            <ul class="sub">
+                <li><a href="#">sub2</a></li>
+            </ul>
+        </li>
+        <li class="group">
+            <div class="title">title 3</div>
+            <ul class="sub">
+                <li><a href="#">sub3</a></li>
+                <li><a href="#">sub3</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+
+    {% block content %}
+    {% endblock %}
+
+    <script src='{% static "odoyApp/secondPage.js" %}'></script>
+    
+    
+</body>
+</html>

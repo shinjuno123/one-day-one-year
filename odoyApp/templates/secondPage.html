@@ -1,15 +1,9 @@
-{% load static %}
+{% extends 'stretchableMenu.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='{% static "odoyApp/secondPage.css" %}'>
-    <title>Result Page</title>
-</head>
-<body>
+
+    
+{% block content %}
     <div class="top">
         <div class="top-margin">
             <li class="ment1">당신의 나이는 00 이네요</li>
@@ -19,17 +13,14 @@
             <div class="sub-top">
                 <div class="bookbox">
                     <img src="" alt="image" class="image">
-                    <li>당신은 ...</li>
+                    <li class="listment">당신은 ...</li>
                 </div>
                 <div class="savingbox">
                     <img src="" alt="image" class="image">
-                    <li>당신은 ...</li>
+                    <li class="listment" >당신은 ...</li>
                 </div>
             </div>
         </div>
     </div>
-</body>
-<script src='{% static "odoyApp/secondPage.js" %}'></script>
+{% endblock %}
 
-
-</html>
