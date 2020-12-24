@@ -34,7 +34,7 @@ body {
     margin-right: 3em;
     left: 50%;
     top: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -60%, 0);
     background: white;
 }
 
