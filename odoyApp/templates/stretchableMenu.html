@@ -12,24 +12,15 @@
     <title>Result Page</title>
 
     <style>
-        #navi-wrapper {
-            display: flex;
-            float: right;
-            background: wheat;
-            padding-left: 0.5em;
-        }
+
 
         ul#navi {
-            width: 300px;
+            float: right;
+            width: 90px;
             text-indent: 5px;
             background-color: #f4f4f4;
         }
 
-        .button-place {
-            background-color: wheat;
-            margin-right: 0.5em;
-            margin-top: 2em;
-        }
 
         ul#navi,
         ul#navi ul {
@@ -39,6 +30,7 @@
         }
 
         .group {
+            
             margin: 3px;
         }
 
@@ -51,34 +43,34 @@
 
 
 
+        ul.sub{
+            height: 1500px;
+            background-color: aqua;
+        }
 
 
         ul.sub li:hover {
             background: #cf0;
         }
 
-        #hideornot-button {
-            height: 3em;
-            width: 3em;
-        }
+
     </style>
 </head>
 
 <body>
 
-    <div id="navi-wrapper">
-        <div class="button-place">
+        <!-- <div class="button-place">
             <input id="hideornot-button" type="button">
-        </div>
+        </div> -->
         <ul id="navi">
             <li class="group">
                 <div class="title">title 1</div>
                 <ul class="sub">
-                   <canvas id="myChart" style="width: 100px; height:100px"></canvas>
+                   <!-- <canvas id="myChart" style="width: 100px; height:100px"></canvas> -->
                 </ul>
             </li>
         </ul>
-    </div>
+    
 
     {% block content %}
     {% endblock %}

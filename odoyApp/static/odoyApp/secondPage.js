@@ -7,9 +7,9 @@ progress_bar2.style.setProperty('--width', 40);
 // setProperty('--width',(input percentage here getting the value from django))
 
 //Draw Graph
-const ctx = document.getElementById("myChart").getContext('2d');
+const graph1 = document.getElementById("myChart1").getContext('2d');
 
-const myChart = new Chart(ctx,{
+const myChart1 = new Chart(graph1,{
     type: 'doughnut',
     data:{
         labels: [ "여자", "남자"],
@@ -30,25 +30,63 @@ const myChart = new Chart(ctx,{
     },
     options: {
         maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+        title: {
+            display : true,
+            text: '남,녀 참가자 비율',
+            fontSize : 30,
+            fontColor:'rgba(46,49,49,1)'
+        },
     }
     
 
 });
 
-//Button action for opening and closing menu 
-const navi = document.getElementById('navi');
+const graph2 = document.getElementById("myChart2").getContext('2d');
+const myChart2 = new Chart(graph2,{
+    type: 'bar',
+    data:{
+        labels: [ "여자", "남자"],
+        datasets: [{
+            label:'남,녀 평균 기대수명',
+            fillColor : "rgba(150,200,250,0.5)",
+            //yAxisID : '나이',
+            data: [85,74],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
 
+            ],
+            borderWidth: 1,
+        }]
+    },
+    options: {
+        maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+        title: {
+            display : true,
+            text: '남,녀 기대수명',
+            fontSize : 30,
+            fontColor:'rgba(46,49,49,1)'
+        },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    fontColor:'rgba(40,40,40,1)'
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor:'rgba(40,40,40,1)'
 
-const hideornotButton = document.getElementById("hideornot-button");
-hideornotButton.addEventListener("click",function(){
-    if(navi.style.display == 'none')
-    {
-        navi.style.display  = 'inline';
-        console.log("보임");
+                }
+            }]
+        }
     }
-    else{
-        navi.style.display  = 'none';
-        console.log("안보임");
-    }
+    
+    
+
 });
-

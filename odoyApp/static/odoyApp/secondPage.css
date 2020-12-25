@@ -20,20 +20,22 @@ body {
 .top {
     position: absolute;
     width: 1200px;
-    height: 700px;
+    height: 1200px;
     left: 50%;
-    top: 50%;
+    top: 90%;
     transform: translate3d(-50%, -50%, 0);
     background-color: yellow;
 
 }
 
 .top-margin{
+    text-indent: 10px;
     position: relative;
-    margin-right: 3em;
+    width: 90%;
+    height: 90%;
     left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -60%, 0);
+    top: 45%;
+    transform: translate3d(-50%, -50%, 0);
     background: white;
 }
 
@@ -102,3 +104,16 @@ body {
     margin-top: 2em;
 }
 
+.graph-1{
+    width: 23em;
+    height: 23em;
+}
+
+.graph-2{
+    width: 23em;
+    height: 23em;
+}
+
+.graph-box{
+    display: flex;
+}
