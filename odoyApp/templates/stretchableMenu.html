@@ -12,10 +12,8 @@
     <title>Result Page</title>
 
     <style>
-
-
         ul#navi {
-            float: right;
+            float: left;
             width: 90px;
             text-indent: 5px;
             background-color: #f4f4f4;
@@ -30,7 +28,7 @@
         }
 
         .group {
-            
+
             margin: 3px;
         }
 
@@ -43,7 +41,7 @@
 
 
 
-        ul.sub{
+        ul.sub {
             height: 1500px;
             background-color: aqua;
         }
@@ -52,28 +50,24 @@
         ul.sub li:hover {
             background: #cf0;
         }
-
-
     </style>
 </head>
 
 <body>
+    <ul id="navi">
+        <li class="group">
+            <div class="title">title 1</div>
+            <ul class="sub">
 
-        <!-- <div class="button-place">
-            <input id="hideornot-button" type="button">
-        </div> -->
-        <ul id="navi">
-            <li class="group">
-                <div class="title">title 1</div>
-                <ul class="sub">
-                   <!-- <canvas id="myChart" style="width: 100px; height:100px"></canvas> -->
-                </ul>
-            </li>
-        </ul>
-    
+            </ul>
+        </li>
+    </ul>
+
 
     {% block content %}
     {% endblock %}
+
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src='{% static "odoyApp/secondPage.js" %}'></script>
 

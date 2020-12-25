@@ -12,7 +12,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: blue;
+    background-color: whitesmoke;
 
 }
 
@@ -22,14 +22,15 @@ body {
     width: 1200px;
     height: 1200px;
     left: 50%;
+    border-radius: 1em;
     top: 90%;
     transform: translate3d(-50%, -50%, 0);
-    background-color: yellow;
-
+    background-color: white;
+    border:2px solid black;
 }
 
 .top-margin{
-    text-indent: 10px;
+    text-indent: 0.5rem;
     position: relative;
     width: 90%;
     height: 90%;
