@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 
@@ -11,84 +12,79 @@
     <title>Result Page</title>
 
     <style>
+        #navi-wrapper {
+            display: flex;
+            float: right;
+            background: wheat;
+            padding-left: 0.5em;
+        }
 
         ul#navi {
-            float:right;
-            width: 200px;
-            text-indent: 10px;
+            width: 300px;
+            text-indent: 5px;
             background-color: #f4f4f4;
         }
-    
+
+        .button-place {
+            background-color: wheat;
+            margin-right: 0.5em;
+            margin-top: 2em;
+        }
+
         ul#navi,
         ul#navi ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-    
+
         .group {
-            margin-bottom: 3px;
+            margin: 3px;
         }
-    
+
         .group div.title {
             height: 5em;
             line-height: 5em;
             background: #9ab92e;
             cursor: pointer;
         }
-    
-        ul.sub li {
-            margin-bottom: 2px;
-            height: 5em;
-            line-height: 5em;
-            background: #f4f4f4;
-            cursor: pointer;
-        }
-    
-        ul.sub li a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            color: #000;
-        }
-    
+
+
+
+
+
         ul.sub li:hover {
             background: #cf0;
         }
+
+        #hideornot-button {
+            height: 3em;
+            width: 3em;
+        }
     </style>
 </head>
+
 <body>
 
-    <ul id="navi">
-        <li class="group">
-            <div class="title">title 1</div>
-            <ul class="sub">
-                <li><a href="#">sub1</a></li>
-                <li><a href="#">sub1</a></li>
-                <li><a href="#">sub1</a></li>
-            </ul>
-        </li>
-        <li class="group">
-            <div class="title">title 2</div>
-            <ul class="sub">
-                <li><a href="#">sub2</a></li>
-            </ul>
-        </li>
-        <li class="group">
-            <div class="title">title 3</div>
-            <ul class="sub">
-                <li><a href="#">sub3</a></li>
-                <li><a href="#">sub3</a></li>
-            </ul>
-        </li>
-    </ul>
-    
+    <div id="navi-wrapper">
+        <div class="button-place">
+            <input id="hideornot-button" type="button">
+        </div>
+        <ul id="navi">
+            <li class="group">
+                <div class="title">title 1</div>
+                <ul class="sub">
+                   <canvas id="myChart" style="width: 100px; height:100px"></canvas>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     {% block content %}
     {% endblock %}
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src='{% static "odoyApp/secondPage.js" %}'></script>
 
-    
 </body>
+
 </html>
