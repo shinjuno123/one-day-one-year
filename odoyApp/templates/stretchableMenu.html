@@ -3,13 +3,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='{% static "odoyApp/secondPage.css" %}'>
     <title>Result Page</title>
+
     <style>
 
         ul#navi {
+            float:right;
             width: 200px;
             text-indent: 10px;
             background-color: #f4f4f4;
@@ -27,16 +31,16 @@
         }
     
         .group div.title {
-            height: 10px;
-            line-height: 10px;
+            height: 5em;
+            line-height: 5em;
             background: #9ab92e;
             cursor: pointer;
         }
     
         ul.sub li {
             margin-bottom: 2px;
-            height: 10px;
-            line-height: 10px;
+            height: 5em;
+            line-height: 5em;
             background: #f4f4f4;
             cursor: pointer;
         }
@@ -55,6 +59,7 @@
     </style>
 </head>
 <body>
+
     <ul id="navi">
         <li class="group">
             <div class="title">title 1</div>
@@ -79,12 +84,11 @@
         </li>
     </ul>
     
-
     {% block content %}
     {% endblock %}
 
     <script src='{% static "odoyApp/secondPage.js" %}'></script>
-    
+
     
 </body>
 </html>
