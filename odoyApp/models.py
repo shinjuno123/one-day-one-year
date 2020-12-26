@@ -9,6 +9,6 @@ class odoyUser(models.Model):
     birth = models.DateField() # 생년월일
     life = models.IntegerField(default = 0) # 수명 없다면 0
 
-    def odoyUser(self):
-        return odoyUser
+    def __str__(self):
+        return self.name
 
