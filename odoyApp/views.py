@@ -9,7 +9,7 @@ import datetime
 
 def odoymain(request): # 이름,날짜,성별,수명을 입력받는 함수
     if (request.method == 'POST'):
-        user =get_object_or_404(odoyUser) #user에 odoyUser를 복사
+        user = get_object_or_404(odoyUser) #user에 odoyUser를 복사
         user.name = request.POST['name'] #이름을 입력받는다.
         if (request.POST['gender'] == '0'):
             user.gender = 0
@@ -21,13 +21,6 @@ def odoymain(request): # 이름,날짜,성별,수명을 입력받는 함수
         user.life = request.POST['life']
 
     return render(request, 'odoymain.html')
-
-def Userform(request):
-
-
-
-
-
 
 def secondPage(request):
     return render(request, 'secondPage.html')
