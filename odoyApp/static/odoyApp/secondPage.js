@@ -90,3 +90,16 @@ const myChart2 = new Chart(graph2,{
     
 
 });
+
+
+
+// window.addEventListener("resize",function(){
+//     const menu = document.querySelector("ul#navi");
+//     const size = {
+//         width : window.innerWidth,
+//         height : window.innerHeight
+//     }
+
+//     if(size)
+
+// });

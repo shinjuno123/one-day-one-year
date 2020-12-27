@@ -13,17 +13,19 @@ body {
     padding: 0;
     margin: 0;
     background-color: whitesmoke;
+    overflow: scroll;
 
 }
 
 
-.top {
+#top {
     position: absolute;
-    width: 1200px;
+    width: 100%;
     height: 1200px;
+    max-width: 900px;
     left: 50%;
     border-radius: 1em;
-    top: 90%;
+    margin-top : 730px;
     transform: translate3d(-50%, -50%, 0);
     background-color: white;
     border:2px solid black;
@@ -106,15 +108,179 @@ body {
 }
 
 .graph-1{
-    width: 23em;
-    height: 23em;
+    width: 300px;
+    height: 300px;
+}
+.graph-2{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
 }
 
-.graph-2{
-    width: 23em;
-    height: 23em;
-}
 
 .graph-box{
+    position: relative;
     display: flex;
+    left: 50%;
+    transform: translateX(-50%); 
+
+
 }
+
+
+
+@media screen and (max-width:1385px){
+    #top{
+        max-width : 800px;
+    }
+    .ment1,.ment2,.listment {
+        list-style-type: none;
+        font-size: 2em;
+        margin-top: 1em;
+    }
+    
+    
+
+}
+
+@media screen and (max-width:1000px){
+    ul#navi{
+        display: none;
+    }
+    .ment1,.ment2,.listment {
+        list-style-type: none;
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+    
+}
+@media screen and (max-width:860px){
+    #top{
+        max-width : 650px
+    }
+    .progress-bar1 {
+        max-width: 35em;
+    }
+    .progress-bar2 {
+        max-width: 35em;
+    }
+    .graph-1{
+        width: 250px;
+        height: 250px;
+    }
+    .graph-2{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width:727px){
+    .ment1,.ment2,.listment {
+        list-style-type: none;
+        font-size: 1.3em;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width:781px){
+    #top{
+        max-width : 560px;
+    }
+    .graph-1{
+        width: 250px;
+        height: 250px;
+    }
+    .graph-2{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin-left: 100px;
+    }
+    
+    
+    .graph-box{
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%); 
+    
+    
+    }
+    .progress-bar1 {
+        max-width: 30em;
+    }
+    .progress-bar2 {
+        max-width: 30em;
+    }
+}
+
+
+@media screen and (max-width:700px){
+    .graph-1{
+        width: 220px;
+        height: 220px;
+    }
+    .graph-2{
+        position: relative;
+        width: 220px;
+        height: 220px;
+        margin-left: 100px;
+    }
+    
+    
+    .graph-box{
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%); 
+    
+    
+    }
+    .progress-bar1 {
+        max-width: 30em;
+    }
+    .progress-bar2 {
+        max-width: 30em;
+    }
+}
+@media screen and (max-width:627px){
+    .progress-bar1 {
+        max-width: 31em;
+    }
+    .progress-bar2 {
+        max-width: 31em;
+    }
+    .graph-1{
+        width: 180px;
+        height: 180px;
+    }
+    .graph-2{
+        position: relative;
+        width: 180px;
+        height: 180px;
+        margin-left: 100px;
+    }
+    
+    
+    .graph-box{
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%); 
+    
+    
+    }
+    
+}
+/* .progress-bar1 {
+    position: relative;
+    width: 40em;
+    height: 4em;
+    margin-top: 1em;
+    background-color: #111;
+    border-radius: 0.2em;
+    color: white;
+} */
