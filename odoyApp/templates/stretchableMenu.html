@@ -12,57 +12,40 @@
     <title>Result Page</title>
 
     <style>
-        ul#navi {
-            float: left;
-            width: 90px;
-            text-indent: 5px;
-            background-color: #f4f4f4;
-        }
-
-
-        ul#navi,
-        ul#navi ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .group {
-
-            margin: 3px;
-        }
-
-        .group div.title {
-            height: 5em;
-            line-height: 5em;
-            background: #9ab92e;
-            cursor: pointer;
-        }
-
-
-
-        ul.sub {
-            height: 1500px;
+        #navi {
+            height: 100%;
+            max-height: 2000px;
+            position: fixed;
+            width: 100%;
+            max-width: 105px;
             background-color: aqua;
+            padding: 0px;
+            margin: 0px;
+            z-index: 1;
+            top: 0%;
         }
+       
 
-
-        ul.sub li:hover {
-            background: #cf0;
+        #share-button {
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            width: 84px;
+            height: 84px;
+            margin-top: 10px;
+            padding: 0;
+        }
+        #share-button:hover{
+            background-color: #cf0;
         }
     </style>
 </head>
 
 <body>
-    <ul id="navi">
-        <li class="group">
-            <div class="title">title 1</div>
-            <ul class="sub">
-
-            </ul>
-        </li>
-    </ul>
-
+    <div id="navi">
+        <input id="share-button" type="button">
+        <input id="share-button" type="button">
+    </div>
 
     {% block content %}
     {% endblock %}

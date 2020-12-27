@@ -4,7 +4,7 @@ progress_bar1.style.setProperty('--width', 70);
 progress_bar2.style.setProperty('--width', 40);
 
 //console.log("안녕")
-// setProperty('--width',(input percentage here getting the value from django))
+// setProperty('--width',(input percentage here after getting the value from django))
 
 //Draw Graph
 const graph1 = document.getElementById("myChart1").getContext('2d');
@@ -49,7 +49,6 @@ const myChart2 = new Chart(graph2,{
         datasets: [{
             label:'남,녀 평균 기대수명',
             fillColor : "rgba(150,200,250,0.5)",
-            //yAxisID : '나이',
             data: [85,74],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -93,13 +92,15 @@ const myChart2 = new Chart(graph2,{
 
 
 
-// window.addEventListener("resize",function(){
-//     const menu = document.querySelector("ul#navi");
-//     const size = {
-//         width : window.innerWidth,
-//         height : window.innerHeight
-//     }
+// event happends when scrolling
+window.addEventListener('scroll',function(){
+    let scrollLocation = document.documentElement.scrollTop;
 
-//     if(size)
+    console.log('scrollLocation : '+scrollLocation);
 
-// });
+
+    if(scrollLocation >= 80){
+        console.log('80 이상');
+    }
+    
+});
