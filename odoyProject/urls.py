@@ -20,5 +20,5 @@ from odoyApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.odoymain, name='odoymain'),
-    path("secondPage/",views.secondPage, name="secondPage")
+    path('secondPage/',views.secondPage, name="secondPage")
 ]

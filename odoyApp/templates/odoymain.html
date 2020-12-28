@@ -1,48 +1,14 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Life is good</title>
-    <link href='{% static "odoyApp/odoyMain.css" %}' rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div id="wrapper">
-      <section id="contents">
-        <header>
-          <h1>Life is good</h1>
-        </header>
-        <form action="" method="post">
-          {% csrf_token %}
-        <div id="birthandsexandlive">
-          <div id="name">
-            <label>닉네임을 입력하세요.</label>
-            <input id="input_name" type="text" name="name" />
-          </div>
-
-          <div id="sex">
-            <label>성별은 무엇입니까?</label>
-            <input type="radio" name="gender" value="1" />남성
-            <input type="radio" name="gender" value="0" />여성
-          </div>
-
-          <div id="birth">
-            <label>생년월일은 무엇입니까?</label>
-            <input id="birthday" type="date" min="1950" max="2020" name = birth />
-          </div>
-
-          <div id="live">
-            <label>몇 살까지 살고싶으십니까?</label>
-            <input id="wantage" type="text" name="life" />
-            <label>세</label>
-          </div>
-        </div>
-        <script src='{% static "odoyApp/odoyMain.js" %}'></script>
-      </section>
-    </div>
-    <input id="button_result" type="submit" value = "결과보기"/>
-  </form>
-  </body>
+<form action="" method="post">
+    {% csrf_token %}
+    {% if error %}
+    <p style="color: red;">please do the right thing</p>{% endif %}
+    {{form}}
+    <input type="submit" value="Submit" />
+</form>
 </html>
+
+
+
 
