@@ -8,37 +8,12 @@
     <link href='{% static "odoyApp/odoyMain.css" %}' rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="wrapper">
-      <section id="contents">
-        <header>
-          <h1>Life is good</h1>
-        </header>
-        <div id="birthandsexandlive">
-          <div id="name">
-            <label>닉네임을 입력하세요.</label>
-            <input id="name" type="text" />
-          </div>
-
-          <div id="sex">
-            <label>성별은 무엇입니까?</label>
-            <input type="radio" name="gender" />남성
-            <input type="radio" name="gender" />여성
-          </div>
-
-          <div id="birth">
-            <label>생년월일은 무엇입니까?</label>
-            <input id="birthday" type="date" min="1950" max="2020" />
-          </div>
-
-          <div id="live">
-            <label>몇 살까지 살고싶으십니까?</label>
-            <input id="wantage" type="text" />
-            <label>세</label>
-          </div>
-        </div>
-        <script src='{% static "odoyApp/odoyMain.js" %}'></script>
-      </section>
-    </div>
-    <input id="button_result" type="button" value = "결과보기"/>
+    <form action="secondPage/" name="test" method="POST">{% csrf_token %}
+      닉네임 : <input type="text" name="nickname"><br>
+      성별 : <input type="text" name="gender"><br>
+      생년월일 : <input type="text" name="birth"><br>
+      기대수명 : <input type="text" name="life"><br>
+      <input type="submit" value="전송">
+    </form>
   </body>
 </html>
