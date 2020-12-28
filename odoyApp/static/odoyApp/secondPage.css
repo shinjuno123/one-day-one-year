@@ -10,9 +10,8 @@
 }
 
 body {
-
     margin: 0;
-    background-color: whitesmoke;
+    /* background: url('/static/odoyApp/images/jan.jpg') no-repeat center center fixed; */
     overflow: scroll;
 
 }
@@ -20,6 +19,7 @@ body {
 .for-scroll{
     position: absolute;
     width: 100%;
+
     min-width: 900px;
     height: 1500px;
     /* background-color: #069; */
@@ -34,8 +34,10 @@ body {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
-    background-color: white;
-    border:2px solid black;
+    background:rgba(255, 255,255,0.7);
+    
+    border:1px solid rgb(204, 204, 204);
+    
 }
 
 .top-margin{
@@ -46,7 +48,7 @@ body {
     left: 50%;
     top: 45%;
     transform: translate3d(-50%, -50%, 0);
-    background: white;
+    background: none;
 }
 
 
@@ -156,8 +158,8 @@ body {
 
 @media screen and (max-width:1180px){
     #navi{
-        height: 500px;
-        width: 1000px;
+        width: 500px;
+        display: fixed;
     }
     .ment1,.ment2,.listment {
         list-style-type: none;

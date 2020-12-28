@@ -3,7 +3,6 @@ const progress_bar2 = document.getElementsByClassName("progress-bar2")[0];
 progress_bar1.style.setProperty('--width', 70);
 progress_bar2.style.setProperty('--width', 40);
 
-//console.log("안녕")
 // setProperty('--width',(input percentage here after getting the value from django))
 
 //Draw Graph
@@ -91,16 +90,9 @@ const myChart2 = new Chart(graph2,{
 });
 
 
+//setBackGround
+let imagesArray = new Array('jan.jpg');
+let body = document.querySelector("body");
+let imageUrl ="url('/static/odoyApp/images/"+imagesArray[0] +"') no-repeat center fixed";
+body.style.background = imageUrl;
 
-// event happends when scrolling
-window.addEventListener('scroll',function(){
-    let scrollLocation = document.documentElement.scrollTop;
-
-    console.log('scrollLocation : '+scrollLocation);
-
-
-    if(scrollLocation >= 80){
-        console.log('80 이상');
-    }
-    
-});

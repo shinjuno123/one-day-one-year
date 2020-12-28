@@ -14,37 +14,71 @@
     <style>
         #navi {
             height: 100%;
-            max-height: 2000px;
+            max-height: 70px;
             position: fixed;
             width: 100%;
-            max-width: 105px;
-            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            max-width: 3000px;
+            background-color: white;
             padding: 0px;
             margin: 0px;
             z-index: 1;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-bottom: 1px solid rgb(204, 204, 204);
             top: 0%;
         }
        
 
-        #share-button {
-            left: 50%;
-            transform: translateX(-50%);
+        #backspace {
             position: relative;
-            width: 84px;
-            height: 84px;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
             margin-top: 10px;
+            background: url('static/odoyApp/images/backspace1.png') no-repeat;
+            border:none;
+            cursor: pointer;
             padding: 0;
         }
-        #share-button:hover{
-            background-color: #cf0;
+
+        #backspace:focus{
+            border: none;
+            outline: none;
+        }
+
+        #share-button {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background: url('static/odoyApp/images/share.png') no-repeat;
+            border:none;
+            margin-top: 10px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        #share-button:focus{
+            border: none;
+            outline: none;
+        }
+
+        .logo{
+            top: 50%;
+            transform: translateY(25%);
         }
     </style>
 </head>
 
 <body>
     <div id="navi">
-        <input id="share-button" type="button">
-        <input id="share-button" type="button">
+        <button type="submit" id="backspace"><img src="{% static 'odoyApp/images/backspace.png' %}" alt="s"></button>
+        <img class="logo" src="{% static 'odoyApp/images/logoTmp.png' %}" alt="ss" width="110" height="50">
+        <button type="submit" id="share-button"><img src="{% static 'odoyApp/images/share.png' %}" alt="s"></button>
     </div>
 
     {% block content %}
