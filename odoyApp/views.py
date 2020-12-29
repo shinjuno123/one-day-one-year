@@ -3,6 +3,7 @@ from .models import *
 # Create your views here.
 
 def odoymain(request):
+    
     return render(request, 'odoymain.html')
 
 
