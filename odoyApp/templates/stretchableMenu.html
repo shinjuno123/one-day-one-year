@@ -9,76 +9,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='{% static "odoyApp/secondPage.css" %}'>
+    <script src="https://kit.fontawesome.com/bc1f5db172.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"/>
     <title>Result Page</title>
 
     <style>
         #navi {
             height: 100%;
-            max-height: 70px;
+            max-height: 55.5px;
             position: fixed;
             width: 100%;
             display: flex;
             justify-content: space-between;
             max-width: 3000px;
-            background-color: white;
+            background-color: #fcf6f5;
             padding: 0px;
             margin: 0px;
             z-index: 1;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            border-bottom: 1px solid rgb(204, 204, 204);
             top: 0%;
         }
-       
+
 
         #backspace {
             position: relative;
-            width: 50px;
-            height: 50px;
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-top: 10px;
-            background: url('static/odoyApp/images/backspace1.png') no-repeat;
-            border:none;
+            margin-left: 18px;
+            top: 50%;
+            height: 24px;
+            transform: translateY(-50%);
+            background-color: #fcf6f5;
+            font-size: 24px;
+            border: none;
+            text-decoration: none;
+            color: #000;
             cursor: pointer;
-            padding: 0;
         }
 
-        #backspace:focus{
+        #backspace:focus {
             border: none;
             outline: none;
         }
 
         #share-button {
             position: relative;
-            width: 50px;
-            height: 50px;
-            margin-left: 10px;
-            margin-right: 10px;
-            background: url('static/odoyApp/images/share.png') no-repeat;
-            border:none;
-            margin-top: 10px;
-            padding: 0;
+            font-size: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-right: 18px;
+            background-color: #fcf6f5;
+            border: none;
             cursor: pointer;
         }
 
-        #share-button:focus{
+        #share-button:focus {
             border: none;
             outline: none;
         }
 
-        .logo{
+        .logo {
+            position: relative;
             top: 50%;
-            transform: translateY(25%);
+            height: 32px;
+            transform: translateY(-50%);
+        }
+        .logo-image{
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-url{
+            position: relative;
+            font-size: 24px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            top: -25%;
+           
+            
         }
     </style>
 </head>
 
 <body>
     <div id="navi">
-        <button type="submit" id="backspace"><img src="{% static 'odoyApp/images/backspace.png' %}" alt="s"></button>
-        <img class="logo" src="{% static 'odoyApp/images/logoTmp.png' %}" alt="ss" width="110" height="50">
-        <button type="submit" id="share-button"><img src="{% static 'odoyApp/images/share.png' %}" alt="s"></button>
+        <a id="backspace" href="{% url 'odoymain' %}" class="fas fa-backspace"></a>
+        <div class="logo">
+            <img class="logo-image" src="{% static 'odoyApp/images/odoymainlogo.png' %}" alt="ss" width="110" height="50">
+            <a href="{% url 'odoymain' %}" class="logo-url">One day one year</a>
+        </div>
+        <button type="submit" id="share-button" class="fas fa-share-alt"></button>
     </div>
 
     {% block content %}

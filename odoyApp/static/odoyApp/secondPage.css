@@ -3,18 +3,43 @@
 *::after {
     box-sizing: border-box;
 }
-.ment1,.ment2,.listment {
+body {
+    margin: 0;
+    overflow: scroll;
+    font-family: "Source Sans Pro"
+
+}
+.result-words{
+    position: relative;
+    color: white;
+    text-align: center;
+    font-weight:545;
+    font-size: 20px;
+    list-style-type:none;
+}
+
+
+.result-ment{
+    background:#2bae66;
+    border-radius: 5px;
+    margin-top: 70px;
+    height: 43px;
+}
+
+.result-ment1{
+    background:#2bae66;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 43px;
+}
+
+.ment1,.ment2,.listment{
     list-style-type: none;
-    font-size: 2em;
+    font-size: 20px;
     margin-top: 1em;
 }
 
-body {
-    margin: 0;
-    /* background: url('/static/odoyApp/images/jan.jpg') no-repeat center center fixed; */
-    overflow: scroll;
-
-}
 
 .for-scroll{
     position: absolute;
@@ -28,8 +53,8 @@ body {
 #top {
     position: relative;
     width: 100%;
-    height: 1200px;
     max-width: 900px;
+    height: 1250px;
     border-radius: 1em;
     left: 50%;
     top: 50%;
@@ -41,7 +66,6 @@ body {
 }
 
 .top-margin{
-    text-indent: 0.5rem;
     position: relative;
     width: 90%;
     height: 90%;
@@ -55,7 +79,6 @@ body {
 
 .progress-bar1 {
     position: relative;
-    width: 40em;
     height: 4em;
     margin-top: 1em;
     background-color: #111;
@@ -75,13 +98,12 @@ body {
     width: calc(var(--width, 0) * 1%);
     min-width: 2rem;
     max-width: calc(100% - 1em);
-    background-color: #069;
+    background-color: #2bae66;
     border-radius: 0.2em;
     padding: 1em;
 }
 .progress-bar2 {
     position: relative;
-    width: 40em;
     height: 4em;
     margin-top: 1em;
     background-color: #111;
@@ -100,7 +122,7 @@ body {
     width: calc(var(--width, 0) * 1%);
     min-width: 2rem;
     max-width: calc(100% - 1em);
-    background-color: #069;
+    background-color: #2bae66;
     border-radius: 0.2em;
     padding: 1em;
 }
@@ -113,7 +135,7 @@ body {
 }
 
 .image{
-    margin-top: 2em;
+    margin-top: 15px;
 }
 
 .graph-1{
@@ -148,7 +170,7 @@ body {
     }
     .ment1,.ment2,.listment {
         list-style-type: none;
-        font-size: 2em;
+        font-size: 17px;
         margin-top: 1em;
     }
     
@@ -163,7 +185,7 @@ body {
     }
     .ment1,.ment2,.listment {
         list-style-type: none;
-        font-size: 1.5em;
+        font-size: 17px;
         margin-top: 1em;
     }
     
@@ -180,12 +202,6 @@ body {
         transform: translate3d(-50%, -50%, 0);
         max-width : 650px
     }
-    .progress-bar1 {
-        max-width: 35em;
-    }
-    .progress-bar2 {
-        max-width: 35em;
-    }
     .graph-1{
         width: 250px;
         height: 250px;
@@ -198,13 +214,7 @@ body {
     }
 }
 
-@media screen and (max-width:727px){
-    .ment1,.ment2,.listment {
-        list-style-type: none;
-        font-size: 1.3em;
-        margin-top: 1em;
-    }
-}
+
 
 @media screen and (max-width:781px){
     .for-scroll{
@@ -238,12 +248,6 @@ body {
     
     
     }
-    .progress-bar1 {
-        max-width: 30em;
-    }
-    .progress-bar2 {
-        max-width: 30em;
-    }
 }
 
 
@@ -268,20 +272,8 @@ body {
     
     
     }
-    .progress-bar1 {
-        max-width: 30em;
-    }
-    .progress-bar2 {
-        max-width: 30em;
-    }
 }
 @media screen and (max-width:627px){
-    .progress-bar1 {
-        max-width: 31em;
-    }
-    .progress-bar2 {
-        max-width: 31em;
-    }
     .graph-1{
         width: 180px;
         height: 180px;
@@ -303,13 +295,5 @@ body {
     
     }
     
+
 }
-/* .progress-bar1 {
-    position: relative;
-    width: 40em;
-    height: 4em;
-    margin-top: 1em;
-    background-color: #111;
-    border-radius: 0.2em;
-    color: white;
-} */
