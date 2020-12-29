@@ -42,77 +42,80 @@ runserver {% endcomment %} -->
     />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href=""
-          ><img
-            class="mainlogo"
-            src="../static/odoyApp/images/odoymainlogo.png"
-            alt="웹페이지 로고 이미지"
-        /></a>
-        <a href="">One day one year</a>
-      </div>
-      <i class="fas fa-share-alt"></i>
-    </header>
+    <form action="secondPage/" name="test" method="POST">
+      {% csrf_token %}
+      <header>
+        <div class="logo">
+          <a href=""
+            ><img
+              class="mainlogo"
+              src="../static/odoyApp/images/odoymainlogo.png"
+              alt="웹페이지 로고 이미지"
+          /></a>
+          <a href="">One day one year</a>
+        </div>
+        <i class="fas fa-share-alt"></i>
+      </header>
 
-    <main class="information-box">
-      <section class="nickname-box">
-        <div class="nickname">
-          <input class="nickname-input" type="text" placeholder="닉네임" />
-          <input type="button" class="login" value="확인" />
+      <main class="information-box">
+        <section class="nickname-box">
+          <div class="nickname">
+            <input class="nickname-input" type="text" placeholder="닉네임" />
+            <input type="button" class="login" value="확인" />
+          </div>
+
+          <div class="visitantsAndparticipants">
+            <div class="visit">
+              <label>방문자 수: </label>
+              <label class="visitants">총 몇 명</label>
+            </div>
+
+            <div class="participate">
+              <label>참여자 수: </label>
+              <label class="participants">총 몇 명</label>
+            </div>
+          </div>
+        </section>
+
+        <div class="information">
+          <section class="sex-box">
+            <div class="sexicon">
+              <i class="fas fa-venus-mars"></i>
+            </div>
+            <label><b>성별</b>은 무엇입니까?</label>
+            <div>
+              <input id="radio-male" type="checkbox" /><label>남성</label>
+              <input id="radio-female" type="checkbox" /><label>여성</label>
+            </div>
+          </section>
+
+          <section class="birthday-box">
+            <div class="birthicon">
+              <i class="fas fa-birthday-cake"></i>
+            </div>
+            <label><b>생년월일</b>은 무엇입니까?</label>
+            <div class="birthday">
+              <input class="date-birthday" type="date" min="1950" max="2100" />
+            </div>
+          </section>
+
+          <section class="wantage-box">
+            <div class="wantageicon">
+              <i class="fas fa-dizzy"></i>
+            </div>
+            <label><b>몇 살</b>까지 살고싶으십니까?</label>
+            <div>
+              <input class="text-wantage" type="text" placeholder="몇 살까지" />
+            </div>
+          </section>
         </div>
 
-        <div class="visitantsAndparticipants">
-          <div class="visit">
-            <label>방문자 수: </label>
-            <label class="visitants">총 몇 명</label>
-          </div>
-
-          <div class="participate">
-            <label>참여자 수: </label>
-            <label class="participants">총 몇 명</label>
-          </div>
+        <div class="result-button">
+          <input class="result" type="button" value="결과보기" />
         </div>
-      </section>
 
-      <div class="information">
-        <section class="sex-box">
-          <div class="sexicon">
-            <i class="fas fa-venus-mars"></i>
-          </div>
-          <label><b>성별</b>은 무엇입니까?</label>
-          <div>
-            <input id="radio-male" type="checkbox" /><label>남성</label>
-            <input id="radio-female" type="checkbox" /><label>여성</label>
-          </div>
-        </section>
-
-        <section class="birthday-box">
-          <div class="birthicon">
-            <i class="fas fa-birthday-cake"></i>
-          </div>
-          <label><b>생년월일</b>은 무엇입니까?</label>
-          <div class="birthday">
-            <input class="date-birthday" type="date" min="1950" max="2100" />
-          </div>
-        </section>
-
-        <section class="wantage-box">
-          <div class="wantageicon">
-            <i class="fas fa-dizzy"></i>
-          </div>
-          <label><b>몇 살</b>까지 살고싶으십니까?</label>
-          <div>
-            <input class="text-wantage" type="text" placeholder="몇 살까지" />
-          </div>
-        </section>
-      </div>
-
-      <div class="result-button">
-        <input class="result" type="button" value="결과보기" />
-      </div>
-
-      <script src="static/odoymain.js"></script>
-    </main>
+        <script src="static/odoymain.js"></script>
+      </main>
+    </form>
   </body>
 </html>

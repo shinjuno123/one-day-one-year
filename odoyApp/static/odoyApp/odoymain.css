@@ -2,6 +2,7 @@ body,
 html {
   margin: 0;
   height: 100vh;
+  background-color: #fcf6f5;
   font-family: "Source Sans Pro";
 }
 
@@ -132,8 +133,8 @@ header {
 .sex-box {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 350px;
+  width: 275px;
+  height: 275px;
   margin: 4px;
   border-radius: 4px;
   background-color: #990011;
@@ -145,8 +146,8 @@ header {
 .birthday-box {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 350px;
+  width: 275px;
+  height: 275px;
   margin: 4px;
   border-radius: 4px;
   background-color: #2bae66;
@@ -158,8 +159,8 @@ header {
 .wantage-box {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 350px;
+  width: 275px;
+  height: 275px;
   margin: 4px;
   border-radius: 4px;
   background-color: #7b9acc;
@@ -191,23 +192,6 @@ header {
 .result:hover {
   background-color: black;
   transition-duration: 0.5s;
-}
-
-@media screen and (max-width: 1260px) {
-  .sex-box {
-    width: 275px;
-    height: 275px;
-  }
-
-  .birthday-box {
-    width: 275px;
-    height: 275px;
-  }
-
-  .wantage-box {
-    width: 275px;
-    height: 275px;
-  }
 }
 
 @media screen and (max-width: 1030px) {
@@ -251,7 +235,7 @@ header {
   }
 
   .nickname-input {
-    width: 90%;
+    width: 89%;
     margin: 4px 0px;
   }
 
