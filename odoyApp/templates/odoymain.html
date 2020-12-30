@@ -42,7 +42,7 @@ runserver {% endcomment %} -->
     />
   </head>
   <body>
-    <form action="secondPage/" name="test" method="POST">
+    <form action="result-page/" name="test" method="POST">
       {% csrf_token %}
       <header>
         <div class="logo">
@@ -60,7 +60,7 @@ runserver {% endcomment %} -->
       <main class="information-box">
         <section class="nickname-box">
           <div class="nickname">
-            <input class="nickname-input" type="text" placeholder="닉네임" />
+            <input class="nickname-input" type="text" placeholder="닉네임" name="nickname" />
             <input type="button" class="login" value="확인" />
           </div>
 
@@ -84,8 +84,8 @@ runserver {% endcomment %} -->
             </div>
             <label><b>성별</b>은 무엇입니까?</label>
             <div>
-              <input id="radio-male" type="checkbox" /><label>남성</label>
-              <input id="radio-female" type="checkbox" /><label>여성</label>
+              <input id="radio-male" type="checkbox" name="gender" value="0"/><label>남성</label>
+              <input id="radio-female" type="checkbox" name="gender" value="1"/><label>여성</label>
             </div>
           </section>
 
@@ -95,7 +95,7 @@ runserver {% endcomment %} -->
             </div>
             <label><b>생년월일</b>은 무엇입니까?</label>
             <div class="birthday">
-              <input class="date-birthday" type="date" min="1950" max="2100" />
+              <input class="date-birthday" type="date" min="1950" max="2100" name="birth" />
             </div>
           </section>
 
@@ -105,13 +105,13 @@ runserver {% endcomment %} -->
             </div>
             <label><b>몇 살</b>까지 살고싶으십니까?</label>
             <div>
-              <input class="text-wantage" type="text" placeholder="몇 살까지" />
+              <input class="text-wantage" type="text" placeholder="몇 살까지" name="life"/>
             </div>
           </section>
         </div>
 
         <div class="result-button">
-          <input class="result" type="button" value="결과보기" />
+          <input class="result" type="submit" value="결과보기" />
         </div>
 
         <script src="static/odoymain.js"></script>
