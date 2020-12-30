@@ -32,7 +32,7 @@ const myChart1 = new Chart(graph1,{
         title: {
             display : true,
             text: '남,녀 참가자 비율',
-            fontSize : 30,
+            fontSize : 20,
             fontColor:'rgba(46,49,49,1)'
         },
     }
@@ -65,8 +65,8 @@ const myChart2 = new Chart(graph2,{
         maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
         title: {
             display : true,
-            text: '남,녀 기대수명',
-            fontSize : 30,
+            text: '남,녀 평균 기대수명',
+            fontSize : 20,
             fontColor:'rgba(46,49,49,1)'
         },
         scales: {
