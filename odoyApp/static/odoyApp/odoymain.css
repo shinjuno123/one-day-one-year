@@ -97,23 +97,6 @@ header {
   width: 100%;
 }
 
-.login {
-  width: 150px;
-  height: 40px;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0px 4px;
-  background-color: #fcf6f5;
-  color: #2bae66;
-  border: 0;
-  border-radius: 4px;
-}
-
-.login:hover {
-  background-color: black;
-  transition-duration: 0.5s;
-}
-
 .visitantsAndparticipants {
   display: flex;
   justify-content: space-between;
@@ -236,11 +219,6 @@ header {
 
   .nickname-input {
     width: 89%;
-    margin: 4px 0px;
-  }
-
-  .login {
-    width: 90%;
     margin: 4px 0px;
   }
 
