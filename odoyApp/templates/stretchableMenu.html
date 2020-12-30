@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='{% static "odoyApp/resultpage.css" %}'>
     <script src="https://kit.fontawesome.com/bc1f5db172.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
     <title>Result Page</title>
 
     <style>
@@ -71,34 +71,72 @@
             height: 32px;
             transform: translateY(-50%);
         }
-        .logo-image{
+
+        .logo-image {
             width: 32px;
             height: 32px;
         }
 
-        .logo-url{
+        .logo-url {
             position: relative;
             font-size: 24px;
             text-decoration: none;
             color: #000;
             font-weight: bold;
             top: -25%;
-           
+
+
+        }
+
+        .share-box{
+            width: 250px;
+            height: 120px;
+            position: fixed;
+            left:calc(100% - 250px);
+            background-color: #fcf6f5;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            margin-top: 55.5px;
+            z-index: 1;
+        
+        
+        }
+
+        #share{
+            position: relative;
+            width: 95%;
+            height: 35%;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,0%);
+            background-color: yellow;
             
         }
+
+
+
     </style>
 </head>
 
 <body>
+<!-- 필요에 따라 템플릿언어로 html을 분리해놨습니다. -->
     <div id="navi">
         <a id="backspace" href="{% url 'odoymain' %}" class="fas fa-backspace"></a>
         <div class="logo">
-            <img class="logo-image" src="{% static 'odoyApp/images/odoymainlogo.png' %}" alt="ss" width="110" height="50">
+            <img class="logo-image" src="{% static 'odoyApp/images/odoymainlogo.png' %}" alt="ss" width="110"
+                height="50">
             <a href="{% url 'odoymain' %}" class="logo-url">One day one year</a>
         </div>
         <button type="submit" id="share-button" class="fas fa-share-alt"></button>
     </div>
+    <!-- share 창(여기 백엔드는 자바 스크립트로 작업할게요~)-->
 
+
+    <div class="share-box">
+        <input id="share" type="button">
+    </div>
+
+    <!-- main -->
     {% block content %}
     {% endblock %}
 
