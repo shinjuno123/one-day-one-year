@@ -88,7 +88,8 @@
 
         }
 
-        .share-box{
+        #share-box{
+            display: none;
             width: 250px;
             height: 120px;
             position: fixed;
@@ -98,6 +99,7 @@
             border-bottom-right-radius: 3px;
             margin-top: 55.5px;
             z-index: 1;
+           
         
         
         }
@@ -106,14 +108,32 @@
             position: relative;
             width: 95%;
             height: 35%;
-            top: 60%;
             left: 50%;
-            transform: translate(-50%,0%);
-            background-color: yellow;
-            
+            transform: translate(-50%,30%);
+            background-color: #2bae66;
+            border : none;
+            border-radius: 3px;
+            color: white;
+            font: bolder;
+            font-size: large;
+            font-weight: 550;
         }
 
+        .sns-index{
+            position: relative;
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+         
+            margin-top: 10px;
+        }
 
+        #sns1,#sns2,#sns3,#sns4{
+            height: 50px;
+            width: 50px;
+            border : none;
+            border-radius: 3px;
+        }
 
     </style>
 </head>
@@ -129,12 +149,17 @@
         </div>
         <button type="submit" id="share-button" class="fas fa-share-alt"></button>
     </div>
+
     <!-- share 창(여기 백엔드는 자바 스크립트로 작업할게요~)-->
-
-
-    <div class="share-box">
-        <input id="share" type="button">
-    </div>
+    <section id="share-box">
+        <div class="sns-index">
+            <input src="{% static 'odoyApp/images/facebook.png' %}" type="image" id="sns1">
+            <input src="{% static 'odoyApp/images/Twitter_Logo_WhiteOnBlue.png' %}" type="image" id="sns2">
+            <input src="{% static 'odoyApp/images/instagram.png' %}" style="background-color: white;" type="image" id="sns3">
+            <input src="{% static 'odoyApp/images/telegram.png' %}" style="background-color: white;"  type="image" id="sns4">
+        </div>
+        <input id="share" type="button" value="공유하기">
+    </section>
 
     <!-- main -->
     {% block content %}

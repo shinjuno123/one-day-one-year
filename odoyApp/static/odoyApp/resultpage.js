@@ -96,3 +96,23 @@ let body = document.querySelector("body");
 let imageUrl ="url('/static/odoyApp/images/"+imagesArray[0] +"') no-repeat center fixed";
 body.style.background = imageUrl;
 
+
+//share-section
+let share_button = document.getElementById("share-button");
+let share_box = document.getElementById("share-box");
+share_button.addEventListener("click",function(){
+
+    if(share_box.style.display == 'block'){
+        share_box.style.transitionDuration=  "5s";
+        share_box.style.display = "none";
+    }
+    else{
+        share_box.style.display = "block";
+        share_box.style.transitionDuration =  "5s";
+    }
+    // for(let i=0;i<=250;i += 0.1){
+    //     setTimeout(function(){
+    //         share_box.style.clip= "rect()";
+    //     },200);
+    // }
+});
