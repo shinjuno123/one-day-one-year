@@ -21,9 +21,11 @@ runserver {% endcomment %} -->
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="changeBackground()" id="body">
     <form action="result-page/" name="test" method="POST">
       {% csrf_token %}
+
+      <!-- Header  -->
       <header>
         <div class="logo">
           <a href=""
@@ -37,7 +39,17 @@ runserver {% endcomment %} -->
         <i class="fas fa-share-alt"></i>
       </header>
 
-      <main class="information-box">
+      <div class="definition">
+        <label id="title"> How did you live your life? </label>
+        <label id="subtitle">
+          It tells all of the world the value of past time.
+          <br />See how you have been able to use your time in the past
+          <br />and how you can live in the future.
+        </label>
+      </div>
+
+      <!-- Nickname, gender, birthday, wantage -->
+      <main id="informationbox">
         <section class="nickname-box">
           <div class="nickname">
             <input
@@ -48,71 +60,75 @@ runserver {% endcomment %} -->
             />
           </div>
 
-          <div class="visitantsAndparticipants">
-            <div class="visit">
-              <label>방문자 수: </label>
-              <label class="visitants">총 몇 명</label>
+          <div class="visit">
+            <div class="visitdiv">
+              <label id="allvisitants">총 몇 명</label>
+              <label id="visitants">방문자 수</label>
             </div>
-
-            <div class="participate">
-              <label>참여자 수: </label>
-              <label class="participants">총 몇 명</label>
+            <div class="timediv">
+              <label onload="printClock()" id="timelbl"></label>
+              <label id="currenttime">현재 시간</label>
             </div>
           </div>
         </section>
 
-        <div class="information">
-          <section class="sex-box">
-            <div class="sexicon">
-              <i class="fas fa-venus-mars"></i>
-            </div>
-            <label><b>성별</b>은 무엇입니까?</label>
-            <div>
-              <input type="radio" name="gender" value="남성" /><label
-                >남성</label
-              >
-              <input type="radio" name="gender" value="여성" /><label
-                >여성</label
-              >
-            </div>
-          </section>
+        <div id="information">
+          <div class="infobox">
+            <section class="sex-box">
+              <div class="sexicon">
+                <i class="fas fa-venus-mars"></i>
+              </div>
+              <label><b>성별</b>은 무엇입니까?</label>
+              <div>
+                <input type="radio" name="gender" value="남성" /><label
+                  >남성</label
+                >
+                <input type="radio" name="gender" value="여성" /><label
+                  >여성</label
+                >
+              </div>
+            </section>
 
-          <section class="birthday-box">
-            <div class="birthicon">
-              <i class="fas fa-birthday-cake"></i>
-            </div>
-            <label><b>생년월일</b>은 무엇입니까?</label>
-            <div class="birthday">
-              <input
-                class="date-birthday"
-                type="date"
-                min="1950"
-                max="2100"
-                name="birth"
-              />
-            </div>
-          </section>
+            <section class="birthday-box">
+              <div class="birthicon">
+                <i class="fas fa-birthday-cake"></i>
+              </div>
+              <label><b>생년월일</b>은 무엇입니까?</label>
+              <div class="birthday">
+                <input
+                  class="date-birthday"
+                  type="date"
+                  min="1950"
+                  max="2100"
+                  name="birth"
+                />
+              </div>
+            </section>
 
-          <section class="wantage-box">
-            <div class="wantageicon">
-              <i class="fas fa-dizzy"></i>
-            </div>
-            <label><b>몇 살</b>까지 살고싶으십니까?</label>
-            <div>
-              <input
-                class="text-wantage"
-                type="text"
-                placeholder="몇 살까지"
-                name="life"
-              />
-            </div>
-          </section>
-        </div>
-
-        <div class="result-button">
+            <section class="wantage-box">
+              <div class="wantageicon">
+                <i class="fas fa-dizzy"></i>
+              </div>
+              <label><b>몇 살</b>까지 살고싶으십니까?</label>
+              <div>
+                <input
+                  class="text-wantage"
+                  type="text"
+                  placeholder="몇 살까지"
+                  name="life"
+                />
+              </div>
+            </section>
+          </div>
           <input class="result" type="submit" value="결과보기" />
         </div>
       </main>
+
+      <div class="test">
+        웹 사이트 설명란 추가할
+        <br />예정입니다.
+      </div>
     </form>
+    <script src="../static/odoyApp/odoymain.js"></script>
   </body>
 </html>
