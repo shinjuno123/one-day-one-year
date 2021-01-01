@@ -1,0 +1,299 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    overflow: scroll;
+    font-family: "Source Sans Pro"
+
+}
+.result-words{
+    position: relative;
+    color: white;
+    text-align: center;
+    font-weight:545;
+    font-size: 20px;
+    list-style-type:none;
+}
+
+
+.result-ment{
+    background:#2bae66;
+    border-radius: 5px;
+    margin-top: 70px;
+    height: 43px;
+}
+
+.result-ment1{
+    background:#2bae66;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 43px;
+}
+
+.ment1,.ment2,.listment{
+    list-style-type: none;
+    font-size: 20px;
+    margin-top: 1em;
+}
+
+
+.for-scroll{
+    position: absolute;
+    width: 100%;
+
+    min-width: 900px;
+    height: 1500px;
+    /* background-color: #069; */
+}
+
+#top {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 1250px;
+    border-radius: 1em;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background:rgba(255, 255,255,0.7);
+    
+    border:1px solid rgb(204, 204, 204);
+    
+}
+
+.top-margin{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 45%;
+    transform: translate3d(-50%, -50%, 0);
+    background: none;
+}
+
+
+
+.progress-bar1 {
+    position: relative;
+    height: 4em;
+    margin-top: 1em;
+    background-color: #111;
+    border-radius: 0.2em;
+    color: white;
+}
+
+
+.progress-bar1::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 0) * 1%);
+    min-width: 2rem;
+    max-width: calc(100% - 1em);
+    background-color: #2bae66;
+    border-radius: 0.2em;
+    padding: 1em;
+}
+.progress-bar2 {
+    position: relative;
+    height: 4em;
+    margin-top: 1em;
+    background-color: #111;
+    border-radius: 0.2em;
+    color: white;
+}
+
+.progress-bar2::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 0) * 1%);
+    min-width: 2rem;
+    max-width: calc(100% - 1em);
+    background-color: #2bae66;
+    border-radius: 0.2em;
+    padding: 1em;
+}
+
+.bookbox{
+    display:flex;
+}
+.savingbox{
+    display:flex;
+}
+
+.image{
+    margin-top: 15px;
+}
+
+.graph-1{
+    width: 300px;
+    height: 300px;
+}
+.graph-2{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
+}
+
+
+.graph-box{
+    position: relative;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%); 
+
+
+}
+
+
+
+@media screen and (max-width:1400px){
+    #top{
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        max-width : 800px;
+    }
+    .ment1,.ment2,.listment {
+        list-style-type: none;
+        font-size: 17px;
+        margin-top: 1em;
+    }
+    
+    
+
+}
+
+@media screen and (max-width:1180px){
+    #navi{
+        width: 500px;
+        display: fixed;
+    }
+    .ment1,.ment2,.listment {
+        list-style-type: none;
+        font-size: 17px;
+        margin-top: 1em;
+    }
+    
+}
+@media screen and (max-width:860px){
+    .for-scroll{
+        width: 100%;
+        min-width: 700px;
+        /* background-color: #069; */
+    }
+    #top{
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        max-width : 650px
+    }
+    .graph-1{
+        width: 250px;
+        height: 250px;
+    }
+    .graph-2{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin-left: 100px;
+    }
+}
+
+
+
+@media screen and (max-width:781px){
+    .for-scroll{
+        width: 100%;
+        min-width: 530px;
+        /* background-color: #069; */
+    }
+    #top{
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        max-width : 560px;
+    }
+    .graph-1{
+        width: 200px;
+        height: 200px;
+    }
+    .graph-2{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin-left: 100px;
+    }
+    
+    
+    .graph-box{
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%); 
+    
+    
+    }
+}
+
+
+@media screen and (max-width:700px){
+    .graph-1{
+        width: 220px;
+        height: 220px;
+    }
+    .graph-2{
+        position: relative;
+        width: 220px;
+        height: 220px;
+        margin-left: 100px;
+    }
+    
+    
+    .graph-box{
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%); 
+    
+    
+    }
+}
+@media screen and (max-width:627px){
+    .graph-1{
+        width: 180px;
+        height: 180px;
+    }
+    .graph-2{
+        position: relative;
+        width: 180px;
+        height: 180px;
+        margin-left: 100px;
+    }
+    
+    
+    .graph-box{
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%); 
+    
+    
+    }
+    
+
+}

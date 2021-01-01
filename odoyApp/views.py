@@ -3,6 +3,10 @@ from .models import *
 # Create your views here.
 
 def odoymain(request):
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
     return render(request, 'odoymain.html')
 
 

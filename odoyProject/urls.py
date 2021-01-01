@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path
 from odoyApp import views
 
@@ -21,4 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.odoymain, name='odoymain'),
     path("result-page/",views.resultpage, name="resultpage")
+=======
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('odoyApp.urls')),
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
 ]

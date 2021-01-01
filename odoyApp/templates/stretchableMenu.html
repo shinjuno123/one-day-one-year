@@ -8,9 +8,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href='{% static "odoyApp/resultpage.css" %}'>
     <script src="https://kit.fontawesome.com/bc1f5db172.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+=======
+    <link rel="stylesheet" href='{% static "odoyApp/secondPage.css" %}'>
+    <script src="https://kit.fontawesome.com/bc1f5db172.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"/>
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
     <title>Result Page</title>
 
     <style>
@@ -71,19 +77,28 @@
             height: 32px;
             transform: translateY(-50%);
         }
+<<<<<<< HEAD
 
         .logo-image {
+=======
+        .logo-image{
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
             width: 32px;
             height: 32px;
         }
 
+<<<<<<< HEAD
         .logo-url {
+=======
+        .logo-url{
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
             position: relative;
             font-size: 24px;
             text-decoration: none;
             color: #000;
             font-weight: bold;
             top: -25%;
+<<<<<<< HEAD
 
 
         }
@@ -115,10 +130,16 @@
 
 
 
+=======
+           
+            
+        }
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
     </style>
 </head>
 
 <body>
+<<<<<<< HEAD
 <!-- 필요에 따라 템플릿언어로 html을 분리해놨습니다. -->
     <div id="navi">
         <a id="backspace" href="{% url 'odoymain' %}" class="fas fa-backspace"></a>
@@ -137,12 +158,27 @@
     </div>
 
     <!-- main -->
+=======
+    <div id="navi">
+        <a id="backspace" href="{% url 'odoyApp:secondPage' %}" class="fas fa-backspace"></a>
+        <div class="logo">
+            <img class="logo-image" src="{% static 'odoyApp/images/odoymainlogo.png' %}" alt="ss" width="110" height="50">
+            <a href="{% url 'odoyApp:secondPage' %}" class="logo-url">One day one year</a>
+        </div>
+        <button type="submit" id="share-button" class="fas fa-share-alt"></button>
+    </div>
+
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
     {% block content %}
     {% endblock %}
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<<<<<<< HEAD
     <script src='{% static "odoyApp/resultpage.js" %}'></script>
+=======
+    <script src='{% static "odoyApp/secondPage.js" %}'></script>
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
 
 </body>
 

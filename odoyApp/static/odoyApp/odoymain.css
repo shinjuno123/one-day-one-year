@@ -97,6 +97,26 @@ header {
   width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+.login {
+  width: 150px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0px 4px;
+  background-color: #fcf6f5;
+  color: #2bae66;
+  border: 0;
+  border-radius: 4px;
+}
+
+.login:hover {
+  background-color: black;
+  transition-duration: 0.5s;
+}
+
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
 .visitantsAndparticipants {
   display: flex;
   justify-content: space-between;
@@ -222,6 +242,14 @@ header {
     margin: 4px 0px;
   }
 
+<<<<<<< HEAD
+=======
+  .login {
+    width: 90%;
+    margin: 4px 0px;
+  }
+
+>>>>>>> 8528c079c74ad6535cc693a756d0a3b6740e0a2c
   .sex-box {
     flex-direction: column;
     justify-content: center;
