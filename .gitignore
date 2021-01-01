@@ -2,3 +2,5 @@
 odoyProject/__pycache__
 odoyApp/__pycache__
 db.sqlite3
+.vscode
+odoyApp/migrations/__pycache__
