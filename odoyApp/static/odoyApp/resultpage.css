@@ -65,7 +65,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 900px;
-    height: 1650px;
+    height: 1700px;
     border-radius: 1em;
     left: 50%;
     top: 50%;
@@ -170,7 +170,7 @@ body {
 @media screen and (max-width:1400px){
     #top{
         max-width : 800px;
-        height: 1670px;
+        height: 1710px;
     }
     
     
@@ -213,7 +213,7 @@ body {
         top: 50%;
         transform: translate3d(-50%, -50%, 0);
         max-width : 560px;
-        height: 1600px;
+        height: 1620px;
     }
     .graph-1{
         width: 200px;
@@ -242,7 +242,7 @@ body {
         top: 50%;
         transform: translate3d(-50%, -50%, 0);
         max-width : 560px;
-        height: 1570px;
+        height: 1620px;
     }
     .graph-1{
         width: 220px;
