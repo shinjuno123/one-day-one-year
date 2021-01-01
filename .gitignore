@@ -1,0 +1,6 @@
+## 컴파일 결과물은 git ignore에 추가시켜서 git이 추적안하게끔 만들어야합니다!
+odoyProject/__pycache__
+odoyApp/__pycache__
+db.sqlite3
+.vscode
+odoyApp/migrations/__pycache__
