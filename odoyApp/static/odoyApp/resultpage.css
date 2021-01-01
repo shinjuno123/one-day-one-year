@@ -49,6 +49,18 @@ body {
     height: 2100px;
 }
 
+#hours-24{
+    position: relative;
+    display: flex;
+    height: 20px;
+    margin-left: .6em;
+    margin-right: .6em;
+    margin-top: 20px;
+    list-style-type: none;
+    font-size: 13px;
+    justify-content: space-between;
+}
+
 #top {
     position: relative;
     width: 100%;
@@ -79,7 +91,7 @@ body {
 .progress-bar1 {
     position: relative;
     height: 4em;
-    margin-top: 1em;
+    
     background-color: #111;
     border-radius: 0.2em;
     color: white;
@@ -104,7 +116,6 @@ body {
 .progress-bar2 {
     position: relative;
     height: 4em;
-    margin-top: 1em;
     background-color: #111;
     border-radius: 0.2em;
     color: white;

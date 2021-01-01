@@ -1,82 +1,110 @@
 {% extends 'stretchableMenu.html' %} {% block content %}
-<div class="for-scroll">
+<section class="for-scroll">
   <div id="top">
     <div class="top-margin">
       <div class="result-ment1">
-        <div style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
+        <div
+          style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
           <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
             class="fas fa-poll-h"></i>
           <li style="display:flex;position:relative; " class="result-words">RESULT</li>
         </div>
       </div>
-      <li class="ment1">당신의 나이는 00 이네요</li>
+      <li class="ment1">당신의 나이는 00세 입니다.</li>
       <li class="ment2">
-        현재와 00년까지를 하루와 일년으로 나타낸다면 다음과 같네요
+        현재와 00년까지를 하루와 일년으로 나타낸다면 다음과 같습니다.
       </li>
       <div class="result-ment">
-        <div style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
+        <div
+          style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
           <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
             class="fas fa-dizzy"></i>
           <li style="display:flex;position:relative; " class="result-words">원하는 수명에 대한 현재의 나이의 위치</li>
         </div>
       </div>
-    <div class="progress-bar1" data-label="Your Season"></div>
-    <div class="progress-bar2" data-label="Your Season"></div>
-    <div class="sub-top">
-      <div class="result-ment">
-        <div
-          style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
-          <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
-            class="fas fa-book"></i>
-          <li style="display:flex;position:relative; " class="result-words">당신이 책을 꾸준히 읽었다면..</li>
+      <div id="hours-24">
+        <li>0시</li>
+        <li>3시</li>
+        <li>6시</li>
+        <li>9시</li>
+        <li>12시</li>
+        <li>15시</li>
+        <li>18시</li>
+        <li>21시</li>
+        <li>24시</li>
+      </div>
+      <div class="progress-bar1" data-label="Your Season"></div>
+
+      <div id="hours-24">
+        <li>1월</li>
+        <li>2월</li>
+        <li>3월</li>
+        <li>4월</li>
+        <li>5월</li>
+        <li>6월</li>
+        <li>7월</li>
+        <li>8월</li>
+        <li>9월</li>
+        <li>10월</li>
+        <li>11월</li>
+        <li>12월</li>
+      </div>
+      <div class="progress-bar2" data-label="Your Season"></div>
+      <div class="sub-top">
+        <div class="result-ment">
+          <div
+            style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
+            <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
+              class="fas fa-book"></i>
+            <li style="display:flex;position:relative; " class="result-words">당신이 책을 꾸준히 읽었다면..</li>
+          </div>
         </div>
-      </div>
-      <div class="bookbox" style="margin-top: 3em;">
-        <li class="listment">당신이 8살 부터 일주일에&nbsp;</li>
-        <li class="listment" style="font-weight: bold;">1권씩만&nbsp;</li>
-        <li class="listment">책을 읽었다면 지금까지&nbsp;</li>
-        <li class="listment"style="font-weight: bold;">총 00권</li>
-        <li class="listment">의 책을 읽을 수가 있었습니다.</li>
-      </div>
-      <div class="result-ment">
-        <div
-          style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
-          <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
-            class="fas fa-piggy-bank"></i>
-          <li style="display:flex;position:relative; " class="result-words">당신이 저금을 꾸준히 했다면..</li>
+        <div class="bookbox" style="margin-top: 3em;">
+          <li class="listment">당신이 8살 부터 일주일에&nbsp;</li>
+          <li class="listment" style="font-weight: bold;">1권씩만&nbsp;</li>
+          <li class="listment">책을 읽었다면 지금까지&nbsp;</li>
+          <li class="listment" style="font-weight: bold;">총 00권</li>
+          <li class="listment">의 책을 읽을 수가 있었습니다.</li>
         </div>
-      </div>
-      <div class="savingbox" style="margin-top: 3em;">
-        <li class="listment">당신이 14살부터 일주일에&nbsp;</li>
-        <li class="listment" style="font-weight: bold;">5000원 씩만&nbsp;</li>
-        <li class="listment">당신이 17살부터 일주일에&nbsp;</li>
-        <li class="listment" style="font-weight: bold;">10000원 씩만&nbsp;</li>
-        <li class="listment">당신이 20살부터 일주일에&nbsp;</li>
-        <li class="listment" style="font-weight: bold;">20000원 씩만&nbsp;</li>
-        <li class="listment">저금했다면 지금까지&nbsp;</li>
-        <li class="listment"style="font-weight: bold;">총 00000원</li>
-        <li class="listment">을 저금 할 수가 있었습니다.</li>
-      </div>
-      <div class="result-ment">
-        <div
-          style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
-          <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
-            class="fas fa-chart-bar"></i>
-          <li style="display:flex;position:relative; " class="result-words">수집 데이터 차트</li>
+        <div class="result-ment">
+          <div
+            style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
+            <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
+              class="fas fa-piggy-bank"></i>
+            <li style="display:flex;position:relative; " class="result-words">당신이 저금을 꾸준히 했다면..</li>
+          </div>
         </div>
-      </div>
-      <div class="graph-box">
-        <div class="graph-1">
-          <canvas id="myChart1" style="width: 100%; height: 100%"></canvas>
+        <div class="savingbox" style="margin-top: 3em;">
+          <li class="listment">당신이 14살부터 일주일에&nbsp;</li>
+          <li class="listment" style="font-weight: bold;">5000원 씩만&nbsp;</li>
+          <li class="listment">당신이 17살부터 일주일에&nbsp;</li>
+          <li class="listment" style="font-weight: bold;">10000원 씩만&nbsp;</li>
+          <li class="listment">당신이 20살부터 일주일에&nbsp;</li>
+          <li class="listment" style="font-weight: bold;">20000원 씩만&nbsp;</li>
+          <li class="listment">저금했다면 지금까지&nbsp;</li>
+          <li class="listment" style="font-weight: bold;">총 00000원</li>
+          <li class="listment">을 저금 할 수가 있었습니다.</li>
         </div>
-        <div class="graph-2">
-          <canvas id="myChart2" style="width: 100%; height: 100%"></canvas>
+        <div class="result-ment">
+          <div
+            style="position:relative;display:flex; justify-content: center; justify-items:center; top:50%; transform:translateY(-50%)">
+            <i style="display:flex; color:white;font-size:20px;position:relative; margin-right:5px; margin-top:3px; "
+              class="fas fa-chart-bar"></i>
+            <li style="display:flex;position:relative; " class="result-words">수집 데이터 차트</li>
+          </div>
+        </div>
+        <div class="graph-box">
+          <div class="graph-1">
+            <canvas id="myChart1" style="width: 100%; height: 100%"></canvas>
+          </div>
+          <div class="graph-2">
+            <canvas id="myChart2" style="width: 100%; height: 100%"></canvas>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
+</section>
 
 
 
