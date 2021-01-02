@@ -157,3 +157,36 @@ function getClipHeight(){
     let arr_size = clip_size.split("px, ");
     return parseInt(arr_size[2]);
 }
+
+function shareAct(str){
+      
+    var cUrl = "현재페이지 주소";
+
+    switch(str){
+
+        case"tweeter":
+            //트위터
+            cUrl = 'https://twitter.com/intent/tweet?text=페이지제목:&url='+cUrl;
+        break;
+
+        case"telegram":
+            //텔레그램
+            cUrl = 'https://telegram.me/share/url?url='+cUrl;
+        break;
+              
+        case"facebook":
+            //페이스북
+            cUrl = 'http://www.facebook.com/sharer/sharer.php?u='+cUrl;
+        break;
+
+        case"kakaostory":
+            //카카오스토리
+            cUrl = 'https://story.kakao.com/share?url='+cUrl;
+        break;
+
+    }
+
+    window.open(cUrl,'','width=600,height=300,top=100,left=100,scrollbars=yes');
+}
+
+
