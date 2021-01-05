@@ -9,8 +9,10 @@ runserver {% endcomment %} -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
   <title>One day one year</title>
   <link rel="stylesheet" href="../static/odoyApp/odoymain.css" type="text/css" />
+  <!-- Icon -->
   <script src="https://kit.fontawesome.com/bc1f5db172.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body onload="changeBackground()" id="body">
@@ -35,11 +37,6 @@ runserver {% endcomment %} -->
       </div>
       <button id="share-button" type="button" class="fas fa-share-alt"></button>
     </header>
-
-
-
-
-
     <div class="definition">
       <label id="title"> How did you live your life? </label>
       <label id="subtitle">
@@ -101,7 +98,7 @@ runserver {% endcomment %} -->
             </div>
           </section>
         </div>
-        <input class="result" type="submit" value="결과보기" />
+        <input class="result" type="submit" value="결과보기" onclick="result_btn()"/>
       </div>
     </main>
 
@@ -113,4 +110,6 @@ runserver {% endcomment %} -->
   <script src="../static/odoyApp/odoymain.js"></script>
 </body>
 
+  <!-- 페이지 이동 처리 부분 -->
+  <iframe name="iframe1" style="display: none;"></iframe>
 </html>

@@ -6,7 +6,7 @@ body {
   background-image: url("./images/morning.jpg");
   background-size: 1550px;
   background-attachment: fixed;
-  font-family: "Source Sans Pro";
+  font-family: "Roboto";
 }
 
 a {
@@ -134,11 +134,13 @@ label {
   color: #fcf6f5;
   font-size: 104px;
   font-weight: bold;
+  text-align: center;
 }
 
 #subtitle {
   color: #fcf6f5;
   font-size: 32px;
+  text-align: center;
 }
 
 .nickname-input {
@@ -205,10 +207,11 @@ header {
 
 .visitdiv {
   display: flex;
-  height: 60px;
+  height: 80px;
   width: 200px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 4px;
   box-shadow: 0px 0px 15px black;
   margin: 8px;
@@ -216,7 +219,7 @@ header {
 
 .timediv {
   display: flex;
-  height: 60px;
+  height: 80px;
   width: 200px;
   flex-direction: column;
   align-items: center;
