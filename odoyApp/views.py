@@ -28,8 +28,12 @@ def resultpage(request):
     age = ( date.today().year - datas.year ) + 1
     db_age = { 'birth' : age }
 
-    ''' 수명(life)값 '''
-    datas = User_Info.objects.last().life
-    db_life = { 'life': datas }
-
     return render(request,'resultpage.html', db_age)
+
+    def resultpage(request):
+        
+         ''' 수명(life)값 '''
+        datas = User_Info.objects.last().life
+        db_life = { 'life': datas }
+
+        return render(request, 'resultpage.html', db_life)
