@@ -47,6 +47,64 @@ label {
   color: black;
 }
 
+#share-button{
+  border: none;
+  cursor: pointer;
+  background: #fcf6f5;
+  transform: translateX(7px);
+}
+
+#share-button:focus{
+  outline: none;
+}
+
+
+#share-box{
+  width: 250px;
+  height: 125px;
+  position: fixed;
+  left:calc(100% - 250px);
+  background-color: #fcf6f5;
+  border-bottom-left-radius: 3px;
+  z-index: 1;
+  clip:rect(0px,250px,0px,0px);
+  margin-top: 54px;
+}
+
+#share{
+  position: relative;
+  width: 95%;
+  height: 45px;
+  max-height: 45px;
+  left: 50%;
+  transform: translate(-50%,30%);
+  background-color: #2bae66;
+  border : none;
+  border-radius: 3px;
+  color: #fcf6f5;
+  font: bolder;
+  font-size: large;
+  font-weight: 550;
+}
+
+.sns-index{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+#sns1,#sns2,#sns3,#sns4{
+  height: 50px;
+  max-height: 50px;
+  width: 50px;
+  border : none;
+  border-radius: 3px;
+}
+
+
+
 .fa-venus-mars,
 .fa-birthday-cake,
 .fa-dizzy {
