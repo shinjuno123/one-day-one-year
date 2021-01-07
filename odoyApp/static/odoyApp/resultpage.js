@@ -1,31 +1,165 @@
 const progress_bar1 = document.getElementsByClassName("progress-bar1")[0];
 const progress_bar2 = document.getElementsByClassName("progress-bar2")[0];
 // setProperty('--width',(input percentage here after getting the value from django))
-
-
+const bar1_percentage = 70; // 여기에다 시간 progress bar의 퍼센트를 넣어주세요 !!!
+const bar2_percentage = 40; // 여기에다 월(달) progress bar의 퍼센트를 넣어주세요 !!!
+const time = ['mor','nig'];
+const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+//setBackGround
+let body = document.querySelector("body");
 
 
 function animation_progress_bar1() {
     let bar1 = getComputedStyle(progress_bar1);
     const bar1_width = parseFloat(bar1.getPropertyValue('--width')) || 0;
-    if (bar1_width == 70) {
+    if (bar1_width == bar1_percentage) {
         return;
     }
+
+    if(bar1_width <=50){
+        let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[0] + ".jpg') no-repeat center fixed";
+        body.style.background = imageUrl;
+    }else if(bar1_width >50){
+        let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[1] + ".jpg') no-repeat center fixed";
+        body.style.background = imageUrl;
+    }
+
     console.log("graph1");
     progress_bar1.style.setProperty('--width', bar1_width + .1);
 }
 
-setInterval(animation_progress_bar1, 2);
 
-setInterval(() => {
+
+function animation_progress_bar2() {
     let bar2 = getComputedStyle(progress_bar2);
     const bar2_width = parseFloat(bar2.getPropertyValue('--width')) || 0;
-    if (bar2_width == 40) {
+    if (bar2_width == bar2_percentage) {
         return;
     }
+    if(0<bar2_width && bar2_width<=8.5){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(8.5<bar2_width && bar2_width<=17){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[1] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[1] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(17<bar2_width && bar2_width<=25.5){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[2] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[2] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(25.5<bar2_width && bar2_width<=34){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[3] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[3] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(34<bar2_width && bar2_width<=42.5){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[4] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[4] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(42.5<bar2_width && bar2_width<=51){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[5] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[5] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(51<bar2_width && bar2_width<=59.5){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[6] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[6] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(59.5<bar2_width&& bar2_width<=68){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[7] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[7] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(68<bar2_width && bar2_width<=76.5){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[8] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[8] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(76.5<bar2_width && bar2_width<=85){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[9] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[9] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(85<bar2_width && bar2_width<=93.5){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[10] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[10] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }else if(93.5<bar2_width && bar2_width<=100){
+        if(bar1_percentage <= 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[11] +'_'+time[0] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+        else if(bar1_percentage > 50){
+            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[11] +'_'+time[1] + ".jpg') no-repeat center fixed";
+            body.style.background = imageUrl;
+        }
+    }
+
+
     console.log("graph2");
     progress_bar2.style.setProperty('--width', bar2_width + .1);
-}, 2)
+}
+
+function execute_bar_animation1(){
+    const bar1 = setInterval(animation_progress_bar1, 2);
+}
+
+function execute_bar_animation2(){
+    const bar2 = setInterval(animation_progress_bar2,10);
+}
+execute_bar_animation1();
+setTimeout(execute_bar_animation2,bar1_percentage*43);
 
 
 //Draw Graph
@@ -37,7 +171,7 @@ const myChart1 = new Chart(graph1, {
         labels: ["여자", "남자"],
         datasets: [{
             label: '참가자(%):',
-            data: [45, 55],
+            data: [45, 55],//이 배열 안에다가 남녀 참가자 비율을 여,남 순으로 넣어주세요!!!
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -71,7 +205,7 @@ const myChart2 = new Chart(graph2, {
         datasets: [{
             label: '남,녀 평균 기대수명',
             fillColor: "rgba(150,200,250,0.5)",
-            data: [85, 74],
+            data: [85, 74], //이 배열 안에다가 남녀 평균기대수명을 여,남 순으로 넣어주세요!!!
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -113,11 +247,7 @@ const myChart2 = new Chart(graph2, {
 });
 
 
-//setBackGround
-let imagesArray = new Array('jan.jpg');
-let body = document.querySelector("body");
-let imageUrl = "url('/static/odoyApp/images/" + imagesArray[0] + "') no-repeat center fixed";
-body.style.background = imageUrl;
+
 
 
 //share-section
