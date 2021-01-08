@@ -1,11 +1,5 @@
 body {
   margin: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #fcf6f5;
-  background-image: url("./images/morning.jpg");
-  background-size: 1550px;
-  background-attachment: fixed;
   font-family: "Roboto";
 }
 
@@ -47,39 +41,38 @@ label {
   color: black;
 }
 
-#share-button{
+#share-button {
   border: none;
   cursor: pointer;
   background: #fcf6f5;
   transform: translateX(7px);
 }
 
-#share-button:focus{
+#share-button:focus {
   outline: none;
 }
 
-
-#share-box{
+#share-box {
   width: 250px;
   height: 125px;
   position: fixed;
-  left:calc(100% - 250px);
+  left: calc(100% - 250px);
   background-color: #fcf6f5;
   border-bottom-left-radius: 3px;
   z-index: 1;
-  clip:rect(0px,250px,0px,0px);
+  clip: rect(0px, 250px, 0px, 0px);
   margin-top: 54px;
 }
 
-#share{
+#share {
   position: relative;
   width: 95%;
   height: 45px;
   max-height: 45px;
   left: 50%;
-  transform: translate(-50%,30%);
+  transform: translate(-50%, 30%);
   background-color: #2bae66;
-  border : none;
+  border: none;
   border-radius: 3px;
   color: #fcf6f5;
   font: bolder;
@@ -87,7 +80,7 @@ label {
   font-weight: 550;
 }
 
-.sns-index{
+.sns-index {
   position: relative;
   display: flex;
   width: 100%;
@@ -95,15 +88,16 @@ label {
   margin-top: 10px;
 }
 
-#sns1,#sns2,#sns3,#sns4{
+#sns1,
+#sns2,
+#sns3,
+#sns4 {
   height: 50px;
   max-height: 50px;
   width: 50px;
-  border : none;
+  border: none;
   border-radius: 3px;
 }
-
-
 
 .fa-venus-mars,
 .fa-birthday-cake,
@@ -213,7 +207,7 @@ header {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  box-shadow: 0px 0px 15px black;
+  box-shadow: 0px 0px 15px white;
   margin: 8px;
 }
 
@@ -225,7 +219,7 @@ header {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  box-shadow: 0px 0px 15px black;
+  box-shadow: 0px 0px 15px white;
   margin: 8px;
 }
 
@@ -265,6 +259,11 @@ header {
   padding: 8px 12px;
 }
 
+.sex-box:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
 .birthday-box {
   display: flex;
   flex-direction: column;
@@ -276,6 +275,11 @@ header {
   justify-content: center;
   align-items: center;
   padding: 8px 12px;
+}
+
+.birthday-box:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
 }
 
 .wantage-box {
@@ -291,6 +295,11 @@ header {
   padding: 8px 12px;
 }
 
+.wantage-box:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
 .result {
   background-color: #2bae66;
   color: #fcf6f5;
@@ -304,11 +313,11 @@ header {
 }
 
 .result:hover {
-  background-color: black;
+  background-color: #155833;
   transition-duration: 0.5s;
 }
 
-.test {
+.addsection {
   display: flex;
   justify-content: center;
   align-items: center;
