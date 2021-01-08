@@ -58,6 +58,7 @@
             background-color: #fcf6f5;
             border: none;
             cursor: pointer;
+            
         }
 
         #share-button:focus {
@@ -136,6 +137,14 @@
             border-radius: 3px;
         }
 
+
+
+        #sns1:focus,#sns2:focus,#sns3:focus,#sns4:focus{
+            outline: none;
+            border : 4px solid #2bae66;
+        }
+
+
     </style>
 </head>
 
@@ -156,7 +165,7 @@
         <div class="sns-index">
             <input src="{% static 'odoyApp/images/facebook.png' %}" type="image" id="sns1">
             <input src="{% static 'odoyApp/images/Twitter_Logo_WhiteOnBlue.png' %}" type="image" id="sns2">
-            <input src="{% static 'odoyApp/images/instagram.png' %}" style="background-color: white;" type="image" id="sns3">
+            <input src="{% static 'odoyApp/images/kakaostory.png' %}" style="background-color: white;" type="image" id="sns3">
             <input src="{% static 'odoyApp/images/telegram.png' %}" style="background-color: white;"  type="image" id="sns4">
         </div>
         <input id="share" type="button" value="공유하기">
