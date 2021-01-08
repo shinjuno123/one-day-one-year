@@ -10,9 +10,9 @@
           <li style="display:flex;position:relative; " class="result-words">RESULT</li>
         </div>
       </div>
-      <li class="ment1">당신의 나이는 00세 입니다.</li>
+      <li class="ment1">당신의 나이는 {{ birth }}세 입니다.</li>
       <li class="ment2">
-        현재와 00년까지를 하루와 일년으로 나타낸다면 다음과 같습니다.
+        현재와 {{ life }}년까지를 하루와 일년으로 나타낸다면 다음과 같습니다.
       </li>
       <div class="result-ment">
         <div
@@ -33,7 +33,14 @@
         <li>21시</li>
         <li>24시</li>
       </div>
-      <div class="progress-bar1" data-label="Your Season"></div>
+      <div class="progress-bar1" data-label="{{ time }}">
+        <script>
+          var timeyearjson = JSON.parse('{{timeyearjson|escapejs}}');
+          const bar1_percentage = timeyearjson['timeper']; // 여기에다 시간 progress bar의 퍼센트를 넣어주세요 !!!
+          const bar2_percentage = timeyearjson['yearper']; // 여기에다 월(달) progress bar의 퍼센트를 넣어주세요 !!!
+        </script>
+
+      </div>
 
       <div id="hours-24">
         <li>1월</li>
@@ -49,7 +56,7 @@
         <li>11월</li>
         <li>12월</li>
       </div>
-      <div class="progress-bar2" data-label="Your Season"></div>
+      <div class="progress-bar2" data-label="{{ year }}"></div>
       <div class="sub-top">
         <div class="result-ment">
           <div
