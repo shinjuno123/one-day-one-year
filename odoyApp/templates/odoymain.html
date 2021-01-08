@@ -15,7 +15,7 @@ runserver {% endcomment %} -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
-<body onload="changeBackground()" id="body">
+<body onload="changeBg()" id="body">
   <!-- share 창(여기 백엔드는 자바 스크립트로 작업할게요~)-->
   <section id="share-box">
     <div class="sns-index">
@@ -26,7 +26,7 @@ runserver {% endcomment %} -->
     </div>
     <input id="share" type="button" value="공유하기">
   </section>
-  <form action="result-page/" name="test" method="POST">
+  <form action="result-page/" name="test" id="formid" method="POST">
     {% csrf_token %}
 
     <!-- Header  -->
@@ -48,9 +48,10 @@ runserver {% endcomment %} -->
 
     <!-- Nickname, gender, birthday, wantage -->
     <main id="informationbox">
+
       <section class="nickname-box">
         <div class="nickname">
-          <input class="nickname-input" type="text" placeholder="닉네임을 입력하세요" name="nickname" />
+          <input id="nicknameid" class="nickname-input" type="text" placeholder="닉네임을 입력하세요" name="nickname" />
         </div>
 
         <div class="visit">
@@ -66,6 +67,7 @@ runserver {% endcomment %} -->
       </section>
 
       <div id="information">
+
         <div class="infobox">
           <section class="sex-box">
             <div class="sexicon">
@@ -84,7 +86,7 @@ runserver {% endcomment %} -->
             </div>
             <label><b>생년월일</b>은 무엇입니까?</label>
             <div class="birthday">
-              <input class="date-birthday" type="date" min="1950" max="2100" name="birth" />
+              <input id="birth" class="date-birthday" type="date" min="1950" max="2100" name="birth" />
             </div>
           </section>
 
@@ -94,15 +96,15 @@ runserver {% endcomment %} -->
             </div>
             <label><b>몇 살</b>까지 살고싶으십니까?</label>
             <div>
-              <input class="text-wantage" type="text" placeholder="몇 살까지" name="life" />
+              <input id="wantage" class="text-wantage" type="text" placeholder="몇 살까지" name="life" />
             </div>
           </section>
         </div>
-        <input class="result" type="submit" value="결과보기" onclick="result_btn()"/>
+        <input id="btnSub" class="result" type="button" value="결과보기" onclick="result_btn()"/>
       </div>
     </main>
 
-    <div class="test">
+    <div class="addsection">
       웹 사이트 설명란 추가할
       <br />예정입니다.
     </div>
