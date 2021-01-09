@@ -60,6 +60,15 @@ def resultpage(request):
     timeyeardict = {'timeper':mylife_percentage, 'yearper': mylife_percentage }
     timeyearjson = json.dumps(timeyeardict)
 
-    context = { 'birth' : age, 'life': mylife, 'time' : mylife_time_oneday_str, 'year': mylife_year_days_date,'timeyearjson':timeyearjson}
+    def my_books():
+        mybirth = mybirth.year + 7
+        mybirth = mybirth.replace(month=1, day=1)
+        my_book = round((date.today() - mybirth).days / 7, 0)
+        
+        return my_book
+
+    books = my_books
+
+    context = { 'birth' : age, 'life': mylife, 'time' : mylife_time_oneday_str, 'year': mylife_year_days_date,'timeyearjson':timeyearjson, 'books': books}
 
     return render(request,'resultpage.html', context)
