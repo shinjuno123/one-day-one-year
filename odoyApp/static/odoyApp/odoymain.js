@@ -1,4 +1,27 @@
 const clock = document.getElementById("timelbl")
+const bodyBg = document.getElementById('body')
+
+// 현재시간에 맞게 배경 이미지를 바꾸는 함수(낮, 밤)
+function changeBg() {
+    var imgsrc = ""
+    var now = new Date();
+    var todayHour = now.getHours();
+    if(todayHour>=7&&todayHour<=17){
+        imgsrc="../static/odoyApp/images/morning.jpg";
+        bodyBg.style.width="100%";
+        bodyBg.style.height="100vh";
+        bodyBg.style.backgroundImage="url('" + imgsrc + "')";
+        bodyBg.style.backgroundSize="1550px";
+        bodyBg.style.backgroundAttachment="fixed";
+    }else{
+        imgsrc="../static/odoyApp/images/night.jpg";
+        bodyBg.style.width="100%";
+        bodyBg.style.height="100vh";
+        bodyBg.style.backgroundImage="url('" + imgsrc + "')";
+        bodyBg.style.backgroundSize="1550px";
+        bodyBg.style.backgroundAttachment="fixed";
+    }
+}
 
 // 현재시간을 출력하는 함수
 function printClock() {
@@ -15,6 +38,7 @@ function printClock() {
 
 window.onload = function() {
     printClock();
+    changeBg();
 }
 
 // 시간이 1의 자리일 때 0을 추가하여 두자리 수로 보이게 하기 위함
@@ -30,7 +54,28 @@ function addZeros(num, digit) {
 }
 
 function result_btn() {
+    const nickname = document.getElementById('nicknameid').value;
+    var gender = document.getElementsByName('gender')
+    var genisCheck = gender.checked;
+    var birthday = document.getElementById('birth').value;
+    const life = document.getElementById('wantage').value
+
+    // -------------Gender 관련---------------
+    if(gender.length==null){
+        genisCheck = gender.checked;
+    }else{
+        for(i=0; i<gender; i++){
+            genisCheck = true;
+            break;
+        }
+    }
+
+    if(nickname==""||!gender||!birthday||life==""){
         alert("내용을 모두 입력해주세요.");
+    }else{
+        alert("결과를 확인하세요.")
+        document.getElementById('formid').submit();
+    }
 }
 
 let share_button = document.getElementById("share-button");

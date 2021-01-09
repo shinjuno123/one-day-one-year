@@ -33,7 +33,14 @@
         <li>21시</li>
         <li>24시</li>
       </div>
-      <div class="progress-bar1" data-label="{{ time }}"></div>
+      <div class="progress-bar1" data-label="{{ time }}">
+        <script>
+          var timeyearjson = JSON.parse('{{timeyearjson|escapejs}}');
+          const bar1_percentage = timeyearjson['timeper']; // 여기에다 시간 progress bar의 퍼센트를 넣어주세요 !!!
+          const bar2_percentage = timeyearjson['yearper']; // 여기에다 월(달) progress bar의 퍼센트를 넣어주세요 !!!
+        </script>
+
+      </div>
 
       <div id="hours-24">
         <li>1월</li>

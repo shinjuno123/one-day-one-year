@@ -3,6 +3,7 @@ from .models import *
 from datetime import date
 import datetime
 import math
+import json
 # Create your views here.
 
 def odoymain(request):
@@ -49,14 +50,16 @@ def resultpage(request):
     #일년으로 계산
     year_time_sec = day_time_sec * 365
     default_year = datetime.date(1,1,1)
-    mylife_percentage = round(year_time_sec * mylife_percentage * 1/100, 1) #일년으로 나타낸 시간(초) 비율
-    mylife_year_days = mylife_percentage / day_time_sec #나의 1년으로 나타난 일 수
+    mylife_year_percentage = round(year_time_sec * mylife_percentage * 1/100, 1) #일년으로 나타낸 시간(초) 비율
+    mylife_year_days = mylife_year_percentage / day_time_sec #나의 1년으로 나타난 일 수
     mylife_year_days_date = default_year + datetime.timedelta(days=mylife_year_days)
     mylife_year_days_date = str(mylife_year_days_date.month) + '월' + ' ' + str(mylife_year_days_date.day) + '일'
 
-    context = { 'birth' : age, 'life': mylife, 'time' : mylife_time_oneday_str, 'year': mylife_year_days_date}
+    #하루 시간 및 일년 비율 json 포맷 변경
+    mylife_percentage = int(round(mylife_percentage,0))
+    timeyeardict = {'timeper':mylife_percentage, 'yearper': mylife_percentage }
+    timeyearjson = json.dumps(timeyeardict)
 
-
-    ''' 수명(life)값 '''
+    context = { 'birth' : age, 'life': mylife, 'time' : mylife_time_oneday_str, 'year': mylife_year_days_date,'timeyearjson':timeyearjson}
 
     return render(request,'resultpage.html', context)
