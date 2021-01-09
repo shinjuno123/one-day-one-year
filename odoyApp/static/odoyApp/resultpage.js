@@ -160,7 +160,7 @@ function execute_bar_animation1(){
 }
 
 function execute_bar_animation2(){
-    const bar2 = setInterval(animation_progress_bar2,10);
+    const bar2 = setInterval(animation_progress_bar2,25);
 }
 execute_bar_animation1();
 setTimeout(execute_bar_animation2,bar1_percentage*43);
