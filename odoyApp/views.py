@@ -108,11 +108,14 @@ def resultpage(request):
         life['life__avg'] = temp_life
         
         return life
-
-    male_life = User_Info.objects.filter(gender='male').aggregate(Avg('life'))
-    male_life = temp_life(male_life)
-    female_life = User_Info.objects.filter(gender='female').aggregate(Avg('life'))
-    female_life = temp_life(female_life)
+    
+    try:
+        male_life = User_Info.objects.filter(gender='male').aggregate(Avg('life'))
+        male_life = temp_life(male_life)
+        female_life = User_Info.objects.filter(gender='female').aggregate(Avg('life'))
+        female_life = temp_life(female_life)
+    except TypeError:
+        pass
 
     mylifeavg = {'male':male_life,'female':female_life}
     mylifeavg = json.dumps(mylifeavg)
