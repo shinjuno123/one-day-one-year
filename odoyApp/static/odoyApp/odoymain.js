@@ -11,14 +11,14 @@ function changeBg() {
         bodyBg.style.width="100%";
         bodyBg.style.height="100vh";
         bodyBg.style.backgroundImage="url('" + imgsrc + "')";
-        bodyBg.style.backgroundSize="1550px";
+        bodyBg.style.backgroundSize="cover";
         bodyBg.style.backgroundAttachment="fixed";
     }else{
         imgsrc="../static/odoyApp/images/night.jpg";
         bodyBg.style.width="100%";
         bodyBg.style.height="100vh";
         bodyBg.style.backgroundImage="url('" + imgsrc + "')";
-        bodyBg.style.backgroundSize="1550px";
+        bodyBg.style.backgroundSize="cover";
         bodyBg.style.backgroundAttachment="fixed";
     }
 }
@@ -74,7 +74,7 @@ function result_btn() {
         alert("내용을 모두 입력해주세요.");
     }else{
         alert("결과를 확인하세요.")
-        document.getElementById('formid').submit();
+        document.getElementById('formId').submit();
     }
 }
 
