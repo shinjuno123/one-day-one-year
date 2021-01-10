@@ -89,8 +89,8 @@
           <li class="listment">당신이 20살부터 일주일에&nbsp;</li>
           <li class="listment" style="font-weight: bold;">20000원 씩만&nbsp;</li>
           <li class="listment">저금했다면 지금까지&nbsp;</li>
-          <li class="listment" style="font-weight: bold;">총 00000원</li>
-          <li class="listment">을 저금 할 수가 있었습니다.</li>
+          <li class="listment" style="font-weight: bold;">5000원은 {{ money1 }}원, 10000원은 {{ money2 }}원, 20000원은 {{ money3 }}원</li>
+          <li class="listment">총 {{ total }}원을 저금 할 수가 있었습니다.</li>
         </div>
         <div class="result-ment">
           <div
@@ -102,10 +102,22 @@
         </div>
         <div class="graph-box">
           <div class="graph-1">
-            <canvas id="myChart1" style="width: 100%; height: 100%"></canvas>
+            <canvas id="myChart1" style="width: 100%; height: 100%">
+              <script>
+                var mysex = JSON.parse('{{mysex|escapejs}}')
+                const male = mysex['male']
+                const female = mysex['female']
+              </script>
+            </canvas>
           </div>
           <div class="graph-2">
-            <canvas id="myChart2" style="width: 100%; height: 100%"></canvas>
+            <canvas id="myChart2" style="width: 100%; height: 100%">
+              <script>
+                var mylife = JSON.parse('{{mylifeavg|escapejs}}')
+                const male_life = mylife['male']['life__avg']
+                const female_life = mylife['female']['life__avg']
+              </script>
+            </canvas>
           </div>
         </div>
       </div>

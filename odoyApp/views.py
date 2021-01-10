@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Avg
 from .models import *
 from datetime import date
 import datetime
@@ -15,10 +16,11 @@ def resultpage(request):
 
     if(request.method == 'POST'):
         nickname = request.POST['nickname']
-        if request.POST['gender']=="0":
+        if request.POST['gender']=="여성": 
             ngender = 'female'
         else:
             ngender = 'male'
+
         nbirth = request.POST['birth']
         nlife = request.POST['life']
         new_data = User_Info(name = nickname ,gender = ngender ,birth = nbirth ,life = nlife)
@@ -57,18 +59,65 @@ def resultpage(request):
 
     #하루 시간 및 일년 비율 json 포맷 변경
     mylife_percentage = int(round(mylife_percentage,0))
-    timeyeardict = {'timeper':mylife_percentage, 'yearper': mylife_percentage }
+    timeyeardict = {'timeper': mylife_percentage, 'yearper': mylife_percentage }
     timeyearjson = json.dumps(timeyeardict)
 
+    #당신이 책을 꾸준히 읽었다면...
     def my_books():
-        mybirth = mybirth.year + 7
-        mybirth = mybirth.replace(month=1, day=1)
-        my_book = round((date.today() - mybirth).days / 7, 0)
+        nonlocal mybirth #바깥쪽 지역변수 사용
+        birth = mybirth.replace(year=mybirth.year+7, month=1, day=1)
+        my_book = int(round((date.today() - birth).days / 7, 0))
         
         return my_book
 
-    books = my_books
+    books = my_books()
 
-    context = { 'birth' : age, 'life': mylife, 'time' : mylife_time_oneday_str, 'year': mylife_year_days_date,'timeyearjson':timeyearjson, 'books': books}
+    #당신이 저금을 꾸준히 했다면..
+    def my_saving_money():
+        nonlocal mybirth
+        for i in range(14,23,3):
+            saving_money_age = mybirth.replace(year=mybirth.year + (i-1), month=1, day=1)
+            my_money = int(round((date.today() - saving_money_age).days / 7, 0))
+            if i==14:
+                my_money *= 5000
+                total_14 = my_money
+            elif i==17:
+                my_money *= 10000
+                total_17 = my_money
+            else:
+                my_money *= 20000
+                total_20 = my_money
+            my_money = 0
+
+        return total_14, total_17, total_20
+    
+    money = my_saving_money()
+    money1, money2, money3, total = money[0], money[1], money[2], sum(money)
+
+    #남녀 참가자 비율
+    male = int(round(User_Info.objects.filter(gender='male').count() / User_Info.objects.count() * 100.0,0))
+    female = int(round(User_Info.objects.filter(gender='female').count() / User_Info.objects.count() * 100.0,0))
+    mysex = {'male':male, 'female':female}
+    mysex = json.dumps(mysex)
+
+    #남녀 평균 기대수명
+
+    def temp_life(life):
+        
+        temp_life = int(round(life.get('life__avg'), 0))
+        life['life__avg'] = temp_life
+        
+        return life
+
+    male_life = User_Info.objects.filter(gender='male').aggregate(Avg('life'))
+    male_life = temp_life(male_life)
+    female_life = User_Info.objects.filter(gender='female').aggregate(Avg('life'))
+    female_life = temp_life(female_life)
+
+    mylifeavg = {'male':male_life,'female':female_life}
+    mylifeavg = json.dumps(mylifeavg)
+
+    context = { 'birth' : age, 'life': mylife, 'time' : mylife_time_oneday_str, 'year': mylife_year_days_date,'timeyearjson':timeyearjson, 
+    'books': books, 'money1':money1, 'money2':money2, 'money3':money3, 'total':total, 'mysex':mysex, 'mylifeavg':mylifeavg}
 
     return render(request,'resultpage.html', context)

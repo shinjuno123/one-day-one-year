@@ -175,7 +175,7 @@ const myChart1 = new Chart(graph1, {
         labels: ["여자", "남자"],
         datasets: [{
             label: '참가자(%):',
-            data: [45, 55],//이 배열 안에다가 남녀 참가자 비율을 여,남 순으로 넣어주세요!!!
+            data: [female, male],//이 배열 안에다가 남녀 참가자 비율을 여,남 순으로 넣어주세요!!!
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -209,7 +209,7 @@ const myChart2 = new Chart(graph2, {
         datasets: [{
             label: '남,녀 평균 기대수명',
             fillColor: "rgba(150,200,250,0.5)",
-            data: [85, 74], //이 배열 안에다가 남녀 평균기대수명을 여,남 순으로 넣어주세요!!!
+            data: [female_life, male_life], //이 배열 안에다가 남녀 평균기대수명을 여,남 순으로 넣어주세요!!!
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
