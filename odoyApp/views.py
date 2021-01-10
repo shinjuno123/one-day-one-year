@@ -112,6 +112,10 @@ def resultpage(request):
     try:
         male_life = User_Info.objects.filter(gender='male').aggregate(Avg('life'))
         male_life = temp_life(male_life)
+    except TypeError:
+        pass
+
+    try:
         female_life = User_Info.objects.filter(gender='female').aggregate(Avg('life'))
         female_life = temp_life(female_life)
     except TypeError:
