@@ -2,183 +2,202 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='{% static "odoyApp/resultpage.css" %}'>
-    <script src="https://kit.fontawesome.com/bc1f5db172.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href='{% static "odoyApp/resultpage.css" %}' />
+    <script
+      src="https://kit.fontawesome.com/bc1f5db172.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
     <title>Result Page</title>
 
     <style>
-        #navi {
-            height: 100%;
-            max-height: 55.5px;
-            position: fixed;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            max-width: 3000px;
-            background-color: #fcf6f5;
-            padding: 0px;
-            margin: 0px;
-            z-index: 1;
-            top: 0%;
-        }
+      #navi {
+        height: 100%;
+        max-height: 55.5px;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        max-width: 3000px;
+        background-color: #fcf6f5;
+        padding: 0px;
+        margin: 0px;
+        z-index: 1;
+        top: 0%;
+      }
 
+      #backspace {
+        position: relative;
+        margin-left: 18px;
+        top: 50%;
+        height: 24px;
+        transform: translateY(-50%);
+        background-color: #fcf6f5;
+        font-size: 24px;
+        border: none;
+        text-decoration: none;
+        color: #000;
+        cursor: pointer;
+      }
 
-        #backspace {
-            position: relative;
-            margin-left: 18px;
-            top: 50%;
-            height: 24px;
-            transform: translateY(-50%);
-            background-color: #fcf6f5;
-            font-size: 24px;
-            border: none;
-            text-decoration: none;
-            color: #000;
-            cursor: pointer;
-        }
+      #backspace:focus {
+        border: none;
+        outline: none;
+      }
 
-        #backspace:focus {
-            border: none;
-            outline: none;
-        }
+      #share-button {
+        position: relative;
+        font-size: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 18px;
+        background-color: #fcf6f5;
+        border: none;
+        cursor: pointer;
+      }
 
-        #share-button {
-            position: relative;
-            font-size: 24px;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-right: 18px;
-            background-color: #fcf6f5;
-            border: none;
-            cursor: pointer;
-            
-        }
+      #share-button:focus {
+        border: none;
+        outline: none;
+      }
 
-        #share-button:focus {
-            border: none;
-            outline: none;
-        }
+      .logo {
+        position: relative;
+        top: 65%;
+        height: 32px;
+        transform: translateY(-50%);
+      }
 
-        .logo {
-            position: relative;
-            top: 50%;
-            height: 32px;
-            transform: translateY(-50%);
-        }
+      .logo-url {
+        position: relative;
+        font-size: 24px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        top: -25%;
+      }
 
-        .logo-image {
-            width: 32px;
-            height: 32px;
-        }
+      #share-box {
+        width: 250px;
+        height: 125px;
+        position: fixed;
+        left: calc(100% - 250px);
+        background-color: #fcf6f5;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        margin-top: 55.5px;
+        z-index: 1;
+        clip: rect(0px, 250px, 0px, 0px);
+      }
 
-        .logo-url {
-            position: relative;
-            font-size: 24px;
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            top: -25%;
+      #share {
+        position: relative;
+        width: 95%;
+        height: 45px;
+        max-height: 45px;
+        left: 50%;
+        transform: translate(-50%, 30%);
+        background-color: #2bae66;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font: bolder;
+        font-size: large;
+        font-weight: 550;
+      }
 
+      .sns-index {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        margin-top: 10px;
+      }
 
-        }
+      #sns1,
+      #sns2,
+      #sns3,
+      #sns4 {
+        height: 50px;
+        max-height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 3px;
+      }
 
-        #share-box{
-            width: 250px;
-            height: 125px;
-            position: fixed;
-            left:calc(100% - 250px);
-            background-color: #fcf6f5;
-            border-bottom-left-radius: 3px;
-            border-bottom-right-radius: 3px;
-            margin-top: 55.5px;
-            z-index: 1;
-            clip:rect(0px,250px,0px,0px);
-           
-        
-        
-        }
-
-        #share{
-            position: relative;
-            width: 95%;
-            height: 45px;
-            max-height: 45px;
-            left: 50%;
-            transform: translate(-50%,30%);
-            background-color: #2bae66;
-            border : none;
-            border-radius: 3px;
-            color: white;
-            font: bolder;
-            font-size: large;
-            font-weight: 550;
-        }
-
-        .sns-index{
-            position: relative;
-            display: flex;
-            width: 100%;
-            justify-content: space-evenly;
-            margin-top: 10px;
-        }
-
-        #sns1,#sns2,#sns3,#sns4{
-            height: 50px;
-            max-height: 50px;
-            width: 50px;
-            border : none;
-            border-radius: 3px;
-        }
-
-
-
-        #sns1:focus,#sns2:focus,#sns3:focus,#sns4:focus{
-            outline: none;
-            border : 4px solid #2bae66;
-        }
-
-
+      #sns1:focus,
+      #sns2:focus,
+      #sns3:focus,
+      #sns4:focus {
+        outline: none;
+        border: 4px solid #2bae66;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-<!-- 필요에 따라 템플릿언어로 html을 분리해놨습니다. -->
+  <body>
+    <!-- 필요에 따라 템플릿언어로 html을 분리해놨습니다. -->
     <div id="navi">
-        <a id="backspace" href="{% url 'odoymain' %}" class="fas fa-backspace"></a>
-        <div class="logo">
-            <img class="logo-image" src="{% static 'odoyApp/images/odoymainlogo.png' %}" alt="ss" width="110"
-                height="50">
-            <a href="{% url 'odoymain' %}" class="logo-url">One day one year</a>
-        </div>
-        <button type="submit" id="share-button" class="fas fa-share-alt"></button>
+      <a
+        id="backspace"
+        href="{% url 'odoymain' %}"
+        class="fas fa-backspace"
+      ></a>
+      <div class="logo">
+        <a href="{% url 'odoymain' %}" class="logo-url">
+          <img
+            class="logo-image"
+            src="{% static 'odoyApp/images/odoylogo.svg' %}"
+            alt="ss"
+          />
+          <label class="logoText">One day one year</label>
+        </a>
+      </div>
+      <button type="submit" id="share-button" class="fas fa-share-alt"></button>
     </div>
 
     <!-- share 창(여기 백엔드는 자바 스크립트로 작업할게요~)-->
     <section id="share-box">
-        <div class="sns-index">
-            <input src="{% static 'odoyApp/images/facebook.png' %}" type="image" id="sns1">
-            <input src="{% static 'odoyApp/images/Twitter_Logo_WhiteOnBlue.png' %}" type="image" id="sns2">
-            <input src="{% static 'odoyApp/images/kakaostory.png' %}" style="background-color: white;" type="image" id="sns3">
-            <input src="{% static 'odoyApp/images/telegram.png' %}" style="background-color: white;"  type="image" id="sns4">
-        </div>
-        <input id="share" type="button" value="공유하기">
+      <div class="sns-index">
+        <input
+          src="{% static 'odoyApp/images/facebook.png' %}"
+          type="image"
+          id="sns1"
+        />
+        <input
+          src="{% static 'odoyApp/images/Twitter_Logo_WhiteOnBlue.png' %}"
+          type="image"
+          id="sns2"
+        />
+        <input
+          src="{% static 'odoyApp/images/kakaostory.png' %}"
+          style="background-color: white"
+          type="image"
+          id="sns3"
+        />
+        <input
+          src="{% static 'odoyApp/images/telegram.png' %}"
+          style="background-color: white"
+          type="image"
+          id="sns4"
+        />
+      </div>
+      <input id="share" type="button" value="공유하기" />
     </section>
 
     <!-- main -->
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"
+    ></script>
     <script src='{% static "odoyApp/resultpage.js" %}'></script>
-
-</body>
-
+  </body>
 </html>

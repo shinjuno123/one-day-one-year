@@ -1,290 +1,281 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    margin: 0;
-    overflow: scroll;
-    font-family: "Source Sans Pro";
-    transition: background-image 1s ease-in-out;
-
+  margin: 0;
+  overflow: scroll;
+  font-family: "Roboto";
+  transition: background-image 2s ease-in-out;
 }
 
-.result-words{
-    position: relative;
-    color: white;
-    text-align: center;
-    font-weight:545;
-    font-size: 20px;
-    list-style-type:none;
+.result-words {
+  position: relative;
+  color: white;
+  text-align: center;
+  font-weight: 545;
+  font-size: 20px;
+  list-style-type: none;
 }
 
-
-.result-ment{
-    background:#2bae66;
-    border-radius: 5px;
-    margin-top: 70px;
-    height: 43px;
+.result-ment {
+  background: #2bae66;
+  border-radius: 5px;
+  margin-top: 70px;
+  height: 43px;
 }
 
-.result-ment1{
-    background:#2bae66;
-    position: relative;
-    border-radius: 5px;
-    margin-top: 17px;
-    height: 43px;
+.result-ment1 {
+  background: #2bae66;
+  position: relative;
+  border-radius: 5px;
+  margin-top: 17px;
+  height: 43px;
 }
 
-.ment1,.ment2,.listment{
-    list-style-type: none;
-    font-size: 15px;
-    margin-top: 1em;
+.ment1,
+.ment2,
+.listment {
+  list-style-type: none;
+  font-size: 15px;
+  margin-top: 1em;
 }
 
-
-.for-scroll{
-    position: absolute;
-    width: 100%;
-    max-width: 2000px;
-    height: 2100px;
+.for-scroll {
+  position: absolute;
+  width: 100%;
+  max-width: 2000px;
+  height: 2100px;
 }
 
-#hours-24{
-    position: relative;
-    display: flex;
-    height: 20px;
-    margin-left: .6em;
-    margin-right: .6em;
-    margin-top: 20px;
-    list-style-type: none;
-    font-size: 13px;
-    justify-content: space-between;
+#hours-24 {
+  position: relative;
+  display: flex;
+  height: 20px;
+  margin-left: 0.6em;
+  margin-right: 0.6em;
+  margin-top: 20px;
+  list-style-type: none;
+  font-size: 13px;
+  justify-content: space-between;
 }
 
 #top {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 1700px;
-    border-radius: 1em;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background:rgba(255, 255,255,0.7);
-    
-    border:1px solid rgb(204, 204, 204);
-    
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 1700px;
+  border-radius: 1em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.7);
+
+  border: 1px solid rgb(204, 204, 204);
 }
 
-.top-margin{
-    position: relative;
-    width: 96%;
-    height: 90%;
-    left: 50%;
-    top: 45%;
-    transform: translate3d(-50%, -50%, 0);
-    background: none;
+.top-margin {
+  position: relative;
+  width: 96%;
+  height: 90%;
+  left: 50%;
+  top: 45%;
+  transform: translate3d(-50%, -50%, 0);
+  background: none;
 }
-
-
 
 .progress-bar1 {
-    position: relative;
-    height: 4em;
-    
-    background-color: #111;
-    border-radius: 0.2em;
-    color: white;
-}
+  position: relative;
+  height: 4em;
 
+  background-color: #111;
+  border-radius: 0.2em;
+  color: white;
+}
 
 .progress-bar1::before {
-    content: attr(data-label);
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: .5em;
-    top: .5em;
-    bottom: .5em;
-    width: calc(var(--width, 0) * 1%);
-    min-width: 2rem;
-    max-width: calc(100% - 1em);
-    background-color: #2bae66;
-    border-radius: 0.2em;
-    padding: 1em;
+  content: attr(data-label);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  bottom: 0.5em;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 2rem;
+  max-width: calc(100% - 1em);
+  background-color: #2bae66;
+  border-radius: 0.2em;
+  padding: 1em;
 }
 .progress-bar2 {
-    position: relative;
-    height: 4em;
-    background-color: #111;
-    border-radius: 0.2em;
-    color: white;
+  position: relative;
+  height: 4em;
+  background-color: #111;
+  border-radius: 0.2em;
+  color: white;
 }
 
 .progress-bar2::before {
-    content: attr(data-label);
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: .5em;
-    top: .5em;
-    bottom: .5em;
-    width: calc(var(--width, 0) * 1%);
-    min-width: 2rem;
-    max-width: calc(100% - 1em);
-    background-color: #2bae66;
-    border-radius: 0.2em;
-    padding: 1em;
+  content: attr(data-label);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  bottom: 0.5em;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 2rem;
+  max-width: calc(100% - 1em);
+  background-color: #2bae66;
+  border-radius: 0.2em;
+  padding: 1em;
 }
 
-
-.image{
-    margin-top: 15px;
+.image {
+  margin-top: 15px;
 }
 
-.graph-1{
-    width: 300px;
-    height: 300px;
+.logo {
+  display: flex;
+  width: 200px;
+  height: 35px;
 }
-.graph-2{
+
+.logo-url {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  text-decoration: none;
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.graph-1 {
+  width: 300px;
+  height: 300px;
+}
+.graph-2 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.graph-box {
+  position: relative;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-right: 55px;
+}
+
+@media screen and (max-width: 1400px) {
+  #top {
+    max-width: 800px;
+    height: 1710px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  #navi {
+    width: 500px;
+    display: fixed;
+  }
+  .ment1,
+  .ment2,
+  .listment {
+    list-style-type: none;
+    font-size: 15.5px;
+    margin-top: 1em;
+  }
+}
+@media screen and (max-width: 860px) {
+  #top {
+    max-width: 650px;
+  }
+  .graph-1 {
+    width: 250px;
+    height: 250px;
+  }
+  .graph-2 {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
+  }
 }
 
+@media screen and (max-width: 781px) {
+  #top {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 560px;
+    height: 1620px;
+  }
+  .graph-1 {
+    width: 200px;
+    height: 200px;
+  }
+  .graph-2 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
 
-.graph-box{
+  .graph-box {
     position: relative;
     display: flex;
     left: 50%;
-    transform: translateX(-50%); 
-    justify-content:space-between;
-    margin-top:20px;
-    margin-right: 55px;
-
-
+    transform: translateX(-50%);
+  }
 }
 
+@media screen and (max-width: 700px) {
+  #top {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 560px;
+    height: 1620px;
+  }
+  .graph-1 {
+    width: 220px;
+    height: 220px;
+  }
+  .graph-2 {
+    position: relative;
+    width: 220px;
+    height: 220px;
+  }
 
-
-@media screen and (max-width:1400px){
-    #top{
-        max-width : 800px;
-        height: 1710px;
-    }
-    
-    
-
+  .graph-box {
+    position: relative;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
+@media screen and (max-width: 627px) {
+  .graph-1 {
+    width: 180px;
+    height: 180px;
+  }
+  .graph-2 {
+    position: relative;
+    width: 180px;
+    height: 180px;
+  }
 
-@media screen and (max-width:1180px){
-    #navi{
-        width: 500px;
-        display: fixed;
-    }
-    .ment1,.ment2,.listment {
-        list-style-type: none;
-        font-size: 15.5px;
-        margin-top: 1em;
-    }
-    
-}
-@media screen and (max-width:860px){
-
-    #top{
-        max-width : 650px
-    }
-    .graph-1{
-        width: 250px;
-        height: 250px;
-    }
-    .graph-2{
-        position: relative;
-        width: 250px;
-        height: 250px;
-    }
-}
-
-
-
-@media screen and (max-width:781px){
-    #top{
-        left: 50%;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        max-width : 560px;
-        height: 1620px;
-    }
-    .graph-1{
-        width: 200px;
-        height: 200px;
-    }
-    .graph-2{
-        position: relative;
-        width: 200px;
-        height: 200px;
-    }
-    
-    
-    .graph-box{
-        position: relative;
-        display: flex;
-        left: 50%;
-        transform: translateX(-50%); 
-    
-    
-    }
-}
-
-@media screen and (max-width:700px){
-    #top{
-        left: 50%;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        max-width : 560px;
-        height: 1620px;
-    }
-    .graph-1{
-        width: 220px;
-        height: 220px;
-    }
-    .graph-2{
-        position: relative;
-        width: 220px;
-        height: 220px;
-    }
-    
-    
-    .graph-box{
-        position: relative;
-        display: flex;
-        left: 50%;
-        transform: translateX(-50%); 
-    
-    
-    }
-}
-@media screen and (max-width:627px){
-    .graph-1{
-        width: 180px;
-        height: 180px;
-    }
-    .graph-2{
-        position: relative;
-        width: 180px;
-        height: 180px;
-    }
-    
-    
-    .graph-box{
-        position: relative;
-        display: flex;
-        left: 50%;
-        transform: translateX(-50%); 
-    
-    
-    }
-    
-
+  .graph-box {
+    position: relative;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
