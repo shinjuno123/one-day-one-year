@@ -109,7 +109,7 @@ def resultpage(request):
         
         return life
     
-     try:
+    try:
         male_life = User_Info.objects.filter(gender='male').aggregate(Avg('life'))
         male_life = temp_life(male_life)
     except TypeError:
