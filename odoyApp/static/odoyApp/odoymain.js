@@ -8,15 +8,11 @@ function changeBg() {
     var todayHour = now.getHours();
     if(todayHour>=7&&todayHour<=17){
         imgsrc="../static/odoyApp/images/morning.jpg";
-        bodyBg.style.width="100%";
-        bodyBg.style.height="100vh";
         bodyBg.style.backgroundImage="url('" + imgsrc + "')";
         bodyBg.style.backgroundSize="cover";
         bodyBg.style.backgroundAttachment="fixed";
     }else{
         imgsrc="../static/odoyApp/images/night.jpg";
-        bodyBg.style.width="100%";
-        bodyBg.style.height="100vh";
         bodyBg.style.backgroundImage="url('" + imgsrc + "')";
         bodyBg.style.backgroundSize="cover";
         bodyBg.style.backgroundAttachment="fixed";
