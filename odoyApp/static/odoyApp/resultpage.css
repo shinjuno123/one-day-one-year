@@ -118,6 +118,8 @@ body {
   background-color: #2bae66;
   border-radius: 0.2em;
   padding: 1em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .progress-bar2 {
   position: relative;
@@ -141,6 +143,8 @@ body {
   background-color: #2bae66;
   border-radius: 0.2em;
   padding: 1em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .image {

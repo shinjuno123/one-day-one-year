@@ -1,5 +1,6 @@
 const progress_bar1 = document.getElementsByClassName("progress-bar1")[0];
 const progress_bar2 = document.getElementsByClassName("progress-bar2")[0];
+
 // setProperty('--width',(input percentage here after getting the value from django))
 //var timeyearjson = JSON.parse('{{timeyearjson|escapejs}}');
 //const bar1_percentage = timeyearjson['timeper']; // 여기에다 시간 progress bar의 퍼센트를 넣어주세요 !!!
