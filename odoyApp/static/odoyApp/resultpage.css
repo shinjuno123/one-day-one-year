@@ -3,11 +3,22 @@
 *::after {
   box-sizing: border-box;
 }
+
+
+body,html{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
 body {
   margin: 0;
   overflow: scroll;
   font-family: "Roboto";
   transition: background-image 2s ease-in-out;
+  background-size: cover;
 }
 
 .result-words {
@@ -45,7 +56,6 @@ body {
 .for-scroll {
   position: absolute;
   width: 100%;
-  max-width: 2000px;
   height: 2100px;
 }
 

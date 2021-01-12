@@ -23,9 +23,11 @@ function animation_progress_bar1() {
     if(bar1_width <=50){
         let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[0] + ".jpg') no-repeat center fixed";
         body.style.background = imageUrl;
+        body.style.backgroundSize = "cover";
     }else if(bar1_width >50){
         let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[1] + ".jpg') no-repeat center fixed";
         body.style.background = imageUrl;
+        body.style.backgroundSize = "cover";
     }
 
     console.log("graph1");
@@ -44,109 +46,133 @@ function animation_progress_bar2() {
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(8.5<bar2_width && bar2_width<=17){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[1] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[1] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(17<bar2_width && bar2_width<=25.5){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[2] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[2] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(25.5<bar2_width && bar2_width<=34){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[3] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[3] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(34<bar2_width && bar2_width<=42.5){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[4] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[4] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(42.5<bar2_width && bar2_width<=51){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[5] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[5] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(51<bar2_width && bar2_width<=59.5){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[6] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[6] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(59.5<bar2_width&& bar2_width<=68){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[7] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[7] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(68<bar2_width && bar2_width<=76.5){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[8] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[8] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(76.5<bar2_width && bar2_width<=85){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[9] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[9] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(85<bar2_width && bar2_width<=93.5){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[10] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[10] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }else if(93.5<bar2_width && bar2_width<=100){
         if(bar1_percentage <= 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[11] +'_'+time[0] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
         else if(bar1_percentage > 50){
             let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[11] +'_'+time[1] + ".jpg') no-repeat center fixed";
             body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
         }
     }
 
