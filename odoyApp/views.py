@@ -20,8 +20,9 @@ def resultpage(request):
             ngender = 'female'
         else:
             ngender = 'male'
-
+ 
         nbirth = request.POST['birth']
+        
         nlife = request.POST['life']
         new_data = User_Info(name = nickname ,gender = ngender ,birth = nbirth ,life = nlife)
         new_data.save()
