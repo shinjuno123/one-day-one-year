@@ -32,9 +32,22 @@ function printClock() {
     setTimeout("printClock()",1000);
 }
 
+// Max Date
+function maxDate(){ 
+    var date = new Date();
+    var year = date.getFullYear() + "-" + addZeros((date.getMonth()+1),2) + "-" + addZeros(date.getDate(),2);
+
+    document.getElementById("birthId").max = year;
+
+}
+
+// Max Age
+// function maxAge
+
 window.onload = function() {
     printClock();
     changeBg();
+    maxDate();
 }
 
 // 시간이 1의 자리일 때 0을 추가하여 두자리 수로 보이게 하기 위함
@@ -49,31 +62,59 @@ function addZeros(num, digit) {
     return zero+num;
 }
 
+// 결과보기 버튼 이벤트
 function result_btn() {
-    const nickname = document.getElementById('nicknameid').value;
+    var nickname = document.getElementById('nicknameid').value;
     var gender = document.getElementsByName('gender')
     var genisCheck = gender.checked;
-    var birthday = document.getElementById('birth').value;
-    const life = document.getElementById('wantage').value
+    var birthday = document.getElementById('birthId').value;
+    var life = document.getElementById('wantage').value
+    var blankBox = document.getElementById('blank')
+    var blankString = "";
 
-    // -------------Gender 관련---------------
+    //-------------Gender 관련---------------
     if(gender.length==null){
         genisCheck = gender.checked;
     }else{
-        for(i=0; i<gender; i++){
-            genisCheck = true;
-            break;
+        for(i=0; i<gender.length; i++){
+            if(gender[i].checked){
+                genisCheck = true;
+                break;
+            }
         }
     }
-
-    if(nickname==""||!gender||!birthday||life==""){
-        alert("내용을 모두 입력해주세요.");
+// --------------------------------------------------------------------여기 작업------------------------------------------------------------------------
+    // if(nickname==""){
+    //     // alert("닉네임을 입력해주세요");
+    //     blankString += "닉네임"
+    // }if(!genisCheck){
+    //     // alert("성별을 입력해주세요");
+    //     blankString += "성별"
+    // }if(birthday==""){
+    //     // alert("생년월일을 입력해주세요");
+    //     blankString += "생년월일"
+    // }if(life==""){
+    //     // alert("수명을 입력해주세요");
+    //     blankString += "수명"
+    // }
+    
+    if(nickname==""||!genisCheck||birthday==""||life==""){
+        alert("내용을 모두 입력해주세요");
     }else{
-        alert("결과를 확인하세요.")
+        alert("결과를 확인하세요.");
         document.getElementById('formId').submit();
     }
-}
 
+    // blankBox.innerText = blankString + "을 입력해주세요."
+}
+// --------------------------------------------------------------------여기 작업------------------------------------------------------------------------
+// Life 자릿수 지정
+function numberMaxLength(e){
+    if(e.value.length > e.maxLength){
+        e.value = e.value.slice(0, e.maxLength);
+    }
+}
+// 공유버튼 이벤트
 let share_button = document.getElementById("share-button");
 let share_box = document.getElementById("share-box");
 let clickTime = 0;
@@ -116,9 +157,8 @@ share_button.addEventListener("click", function () {
             }
         }, 0.05);
     }
-
-
 });
+
 function getClipHeight() {
     let style = getComputedStyle(share_box);
     let clip_size = style.getPropertyValue("clip");
@@ -127,8 +167,8 @@ function getClipHeight() {
     return parseInt(arr_size[2]);
 }
 
+// 공유버튼 사이트 주소
 function shareAct(str) {
-
     var cUrl = "현재페이지 주소";
 
     switch (str) {
@@ -217,8 +257,6 @@ sns2.addEventListener("click", function () {
     sns3.style.height = "50px";
     sns4.style.width = "50px";
     sns4.style.height = "50px";
-    
-
 });
 
 
