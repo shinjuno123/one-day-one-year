@@ -51,26 +51,26 @@ def resultpage(request):
     #사용자 나이 계산하기
     age = ( date.today().year - mybirth.year ) + 1
     #생년원일부터 수명까지의 시간 계산
-    mybirthyear_mylife_sum = mybirth.year + mylife #태어난연도 + 수명값
-    mylife_date = mybirth #생년월일 mylife_date에 저장
-    mylife_date = mylife_date.replace(year = mybirthyear_mylife_sum) #수명값 교체
-    mylife_mybirth_minus = mylife_date - mybirth #총 일수 구하기
-    mylife_days = mylife_mybirth_minus.days #총 일수 저장하기
+    mybirthyear_mylife_sum = mybirth.year + mylife #태어난연도 + 수명값  ex) 1996 + 100 = 2096, 2021 + 1 = 2022
+    mylife_date = mybirth #생년월일 mylife_date에 저장 ex) datetime.date((1996,02,26), datetime.date(2021,01,01)
+    mylife_date = mylife_date.replace(year = mybirthyear_mylife_sum) #수명값 교체 ex) (1996,02,26 -> 2096,02,26), (2021,01,01 -> 2022,01,01)
+    mylife_mybirth_minus = mylife_date - mybirth #총 일수 구하기 ex) 계산된 일수, 365 
+    mylife_days = mylife_mybirth_minus.days #총 일수 저장하기  
     day_time_sec = 24 * 60 * 60 #하루 24시간을 초(1sec)로 계산
-    mylife_time_sec = mylife_days * day_time_sec #태어난날부터 수명날짜까지의 초(1sec)값
-    mytoday = date.today() #오늘 날짜
-    mylife_current_day = mytoday - mybirth #현재까지 살아온 일 수 계산
-    mylife_current_day_time_sec = mylife_current_day.days * day_time_sec #현재까지 시간(초)
-    mylife_percentage = round(mylife_current_day_time_sec / mylife_time_sec * 100.0, 2) #수명까지의 비율
-    mylife_time_oneday = round(mylife_percentage * day_time_sec * 1/100, 0) #나의 하루 시간
-    mylife_time_oneday_str = str(datetime.timedelta(seconds=mylife_time_oneday)) #나의 현재 시간
+    mylife_time_sec = mylife_days * day_time_sec #태어난날부터 수명날짜까지의 초(1sec)값 ex) 총 일수에 하루 시간을 초로 계산한 값을 곱함.
+    mytoday = date.today() #오늘 날짜 
+    mylife_current_day = mytoday - mybirth #현재까지 살아온 일 수 계산 ex) 오늘 날짜에서 생년월일 빼기, 2021,01,14 - 2021,01,01 => 13일
+    mylife_current_day_time_sec = mylife_current_day.days * day_time_sec #현재까지 시간(초) ex) 13일 * 86400초(1day)
+    mylife_percentage = round(mylife_current_day_time_sec / mylife_time_sec * 100.0, 2) #수명까지의 비율 ex) (13*86400 / 365*86400 * 100.0)
+    mylife_time_oneday = round(mylife_percentage * day_time_sec * 1/100, 0) #나의 하루 시간 ex) 
+    mylife_time_oneday_str = str(datetime.timedelta(seconds=mylife_time_oneday)) #나의 현재 시간 
 
     #일년으로 계산
     year_time_sec = day_time_sec * 365
     default_year = datetime.date(1,1,1)
     mylife_year_percentage = round(year_time_sec * mylife_percentage * 1/100, 1) #일년으로 나타낸 시간(초) 비율
     mylife_year_days = mylife_year_percentage / day_time_sec #나의 1년으로 나타난 일 수
-    mylife_year_days_date = default_year + datetime.timedelta(days=mylife_year_days)
+    mylife_year_days_date = default_year + datetime.timedelta(days=mylife_year_days) 
     mylife_year_days_date = str(mylife_year_days_date.month) + '월' + ' ' + str(mylife_year_days_date.day) + '일'
 
     #하루 시간 및 일년 비율 json 포맷 변경
