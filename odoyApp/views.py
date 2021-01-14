@@ -51,9 +51,9 @@ def resultpage(request):
     #사용자 나이 계산하기
     age = ( date.today().year - mybirth.year ) + 1
     #생년원일부터 수명까지의 시간 계산
-    mybirthyear_mylife_sum = mybirth.year + mylife #태어난연도 + 수명값
-    mylife_date = mybirth #생년월일 mylife_date에 저장
-    mylife_date = mylife_date.replace(year = mybirthyear_mylife_sum) #수명값 교체
+    mybirthyear_mylife_sum = mybirth.year + mylife #태어난연도 + 수명값  ex) 1996 + 100 = 2096, 2021 + 1 = 2022
+    mylife_date = mybirth #생년월일 mylife_date에 저장 ex) datetime.date((1996,02,26), datetime.date(2021,01,01)
+    mylife_date = mylife_date.replace(year = mybirthyear_mylife_sum) #수명값 교체 ex) (1996,02,26 -> 2096,02,26), (2021,01,01 -> 2022,01,01)
     mylife_mybirth_minus = mylife_date - mybirth #총 일수 구하기
     mylife_days = mylife_mybirth_minus.days #총 일수 저장하기
     day_time_sec = 24 * 60 * 60 #하루 24시간을 초(1sec)로 계산
