@@ -5,6 +5,7 @@ from datetime import date
 import datetime
 import math
 import json
+import re
 # Create your views here.
 
 def odoymain(request):
@@ -20,10 +21,24 @@ def resultpage(request):
             ngender = 'female'
         else:
             ngender = 'male'
- 
+    #life 값이 생년월일보다 작거나, 임의값을 넣을 경우
         nbirth = request.POST['birth']
-        
         nlife = request.POST['life']
+        nbirth_temp = nbirth
+        nbirth_temp = nbirth_temp.replace('-',',')
+        nbirth_temp = datetime.date(int(nbirth_temp[0:4]), int(nbirth_temp[5:7]), int(nbirth_temp[8:]))
+        nbirth_temp = (date.today().year - nbirth_temp.year) + 1
+
+        nbirth_patterns = re.compile('[^0-9]|[0-9]+[^0-9]|[^0-9]+[0-9]|[0-9]+[^0-9]+[0-9]|[^0-9]+[0-9]+[^0-9]') 
+        nlife_patterns = nbirth_patterns.match(nlife)
+        
+        if nlife_patterns : 
+            nlife = 100
+        else:
+            if nbirth_temp > int(nlife) :
+                nlife = 100
+                        
+        
         new_data = User_Info(name = nickname ,gender = ngender ,birth = nbirth ,life = nlife)
         new_data.save()
     
@@ -72,6 +87,8 @@ def resultpage(request):
         return my_book
 
     books = my_books()
+    if books < 0:
+        books = 0
 
     #당신이 저금을 꾸준히 했다면..
     def my_saving_money():
@@ -93,6 +110,11 @@ def resultpage(request):
         return total_14, total_17, total_20
     
     money = my_saving_money()
+    money = list(money)
+    for i in range(len(money)):
+        if money[i] < 0:
+            money[i] = 0
+
     money1, money2, money3, total = money[0], money[1], money[2], sum(money)
 
     #남녀 참가자 비율
