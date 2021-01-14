@@ -95,8 +95,9 @@ runserver {% endcomment %} -->
               id="nicknameid"
               class="nickname-input"
               type="text"
-              placeholder="닉네임을 입력하세요"
+              placeholder="닉네임을 입력하세요."
               name="nickname"
+              maxlength="8"
             />
           </div>
 
@@ -136,12 +137,13 @@ runserver {% endcomment %} -->
               <label><b>생년월일</b>은 무엇입니까?</label>
               <div class="birthday">
                 <input
-                  id="birth"
+                  id="birthId"
                   class="date-birthday"
                   type="date"
-                  min="1950"
-                  max="2100"
+                  min="1900-01-01"
+                  max="2100-01-01"
                   name="birth"
+                  onload="maxDate()"
                 />
               </div>
             </section>
@@ -152,15 +154,22 @@ runserver {% endcomment %} -->
               </div>
               <label><b>몇 살</b>까지 살고싶으십니까?</label>
               <div>
+                `
                 <input
                   id="wantage"
                   class="text-wantage"
-                  type="text"
-                  placeholder="몇 살까지"
+                  type="number"
+                  min="0"
+                  max="3000"
+                  placeholder="수명을 입력하세요."
                   name="life"
+                  maxlength="3"
+                  oninput="numberMaxLength(this);"
                 />
               </div>
             </section>
+
+            <!-- <label onclick="result_btn()" id="blank"></label> -->
           </div>
           <input
             id="btnSub"
