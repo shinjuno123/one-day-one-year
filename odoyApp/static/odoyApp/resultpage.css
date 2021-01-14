@@ -18,6 +18,7 @@ body {
   overflow: scroll;
   font-family: "Roboto";
   transition: background-image 2s ease-in-out;
+  background: url('/static/odoyApp/images/wallpapers/jan_mor.jpg') no-repeat center fixed;
   background-size: cover;
 }
 

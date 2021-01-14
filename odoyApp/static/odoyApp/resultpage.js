@@ -1,6 +1,8 @@
 const progress_bar1 = document.getElementsByClassName("progress-bar1")[0];
 const progress_bar2 = document.getElementsByClassName("progress-bar2")[0];
-
+let background_changes = new Array(100);
+let background_changes_count = 0;
+let background_changes_sub_count = 300;
 // setProperty('--width',(input percentage here after getting the value from django))
 //var timeyearjson = JSON.parse('{{timeyearjson|escapejs}}');
 //const bar1_percentage = timeyearjson['timeper']; // 여기에다 시간 progress bar의 퍼센트를 넣어주세요 !!!
@@ -8,8 +10,8 @@ const progress_bar2 = document.getElementsByClassName("progress-bar2")[0];
 
 //const bar1_percentage = 80; // 여기에다 시간 progress bar의 퍼센트를 넣어주세요 !!!
 //const bar2_percentage = 88;
-const time = ['mor','nig'];
-const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+const time = ['mor', 'nig'];
+const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
 //setBackGround
 let body = document.querySelector("body");
 
@@ -21,16 +23,12 @@ function animation_progress_bar1() {
         return;
     }
 
-    if(bar1_width <=50){
-        let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[0] + ".jpg') no-repeat center fixed";
-        body.style.background = imageUrl;
-        body.style.backgroundSize = "cover";
-    }else if(bar1_width >50){
-        let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[1] + ".jpg') no-repeat center fixed";
-        body.style.background = imageUrl;
-        body.style.backgroundSize = "cover";
+    if (bar1_width <= 50) {
+        background_changes[background_changes_count] = months[0] + '_' + time[0];
+    } else if (bar1_width > 50) {
+        background_changes[background_changes_count] = months[0] + '_' + time[1];
     }
-
+    background_changes_count += 1;
     console.log("graph1");
     progress_bar1.style.setProperty('--width', bar1_width + .1);
 }
@@ -43,154 +41,128 @@ function animation_progress_bar2() {
     if (bar2_width == bar2_percentage) {
         return;
     }
-    if(0<bar2_width && bar2_width<=8.5){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    if (0 < bar2_width && bar2_width <= 8.5) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[0] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[0] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[0] + '_' + time[1];
         }
-    }else if(8.5<bar2_width && bar2_width<=17){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[1] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (8.5 < bar2_width && bar2_width <= 17) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[1] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[1] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[1] + '_' + time[1];
         }
-    }else if(17<bar2_width && bar2_width<=25.5){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[2] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (17 < bar2_width && bar2_width <= 25.5) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[2] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[2] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[2] + '_' + time[1];
         }
-    }else if(25.5<bar2_width && bar2_width<=34){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[3] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (25.5 < bar2_width && bar2_width <= 34) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[3] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[3] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[3] + '_' + time[1];
         }
-    }else if(34<bar2_width && bar2_width<=42.5){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[4] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (34 < bar2_width && bar2_width <= 42.5) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[4] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[4] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[4] + '_' + time[1];
         }
-    }else if(42.5<bar2_width && bar2_width<=51){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[5] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (42.5 < bar2_width && bar2_width <= 51) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[5] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[5] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[5] + '_' + time[1];
         }
-    }else if(51<bar2_width && bar2_width<=59.5){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[6] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (51 < bar2_width && bar2_width <= 59.5) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[6] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[6] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[6] + '_' + time[1];
         }
-    }else if(59.5<bar2_width&& bar2_width<=68){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[7] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (59.5 < bar2_width && bar2_width <= 68) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[7] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[7] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[7] + '_' + time[1];
         }
-    }else if(68<bar2_width && bar2_width<=76.5){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[8] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (68 < bar2_width && bar2_width <= 76.5) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[8] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[8] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[8] + '_' + time[1];
         }
-    }else if(76.5<bar2_width && bar2_width<=85){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[9] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (76.5 < bar2_width && bar2_width <= 85) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[9] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[9] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[9] + '_' + time[1];
         }
-    }else if(85<bar2_width && bar2_width<=93.5){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[10] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (85 < bar2_width && bar2_width <= 93.5) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[10] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[10] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[10] + '_' + time[1];
         }
-    }else if(93.5<bar2_width && bar2_width<=100){
-        if(bar1_percentage <= 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[11] +'_'+time[0] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+    } else if (93.5 < bar2_width && bar2_width <= 100) {
+        if (bar1_percentage <= 50) {
+            background_changes[background_changes_count] = months[11] + '_' + time[0];
         }
-        else if(bar1_percentage > 50){
-            let imageUrl = "url('/static/odoyApp/images/wallpapers/" + months[11] +'_'+time[1] + ".jpg') no-repeat center fixed";
-            body.style.background = imageUrl;
-            body.style.backgroundSize = "cover";
+        else if (bar1_percentage > 50) {
+            background_changes[background_changes_count] = months[11] + '_' + time[1];
         }
     }
 
+    background_changes_count += 1;
 
     console.log("graph2");
     progress_bar2.style.setProperty('--width', bar2_width + .1);
 }
 
-function execute_bar_animation1(){
+
+function execute_changing_backgrounds_slowly() {
+    const background = setInterval(function () {
+        let imageUrl = "url('/static/odoyApp/images/wallpapers/" + background_changes[background_changes_sub_count] + ".jpg') no-repeat center fixed";
+        if (imageUrl == "url('/static/odoyApp/images/wallpapers/undefined.jpg') no-repeat center fixed") {
+            console.log("경로 못찾음");
+            background_changes_sub_count += 1;
+        }
+        else{
+            body.style.background = imageUrl;
+            body.style.backgroundSize = "cover";
+            background_changes_sub_count += 1;
+        }
+        if (background_changes_count <= background_changes_sub_count) {
+            clearInterval(background);
+        }
+    }, 30);
+}
+
+function execute_bar_animation1() {
+
     const bar1 = setInterval(animation_progress_bar1, 2);
 }
 
-function execute_bar_animation2(){
-    const bar2 = setInterval(animation_progress_bar2,25);
+function execute_bar_animation2() {
+    const bar2 = setInterval(animation_progress_bar2, 4);
 }
 execute_bar_animation1();
-setTimeout(execute_bar_animation2,bar1_percentage*43);
+setTimeout(execute_bar_animation2, bar1_percentage * 43);
+setTimeout(execute_changing_backgrounds_slowly, bar1_percentage * 80);
 
 
 //Draw Graph
