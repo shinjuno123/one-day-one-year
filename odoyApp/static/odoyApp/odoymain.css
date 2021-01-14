@@ -197,6 +197,8 @@ header {
 
 .nickname {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
 }
@@ -264,7 +266,7 @@ header {
   height: 275px;
   margin: 4px;
   border-radius: 4px;
-  background-color: #990011;
+  background-color: black;
   justify-content: center;
   align-items: center;
   padding: 8px 12px;
@@ -282,7 +284,7 @@ header {
   height: 275px;
   margin: 4px;
   border-radius: 4px;
-  background-color: #2bae66;
+  background-color: black;
   justify-content: center;
   align-items: center;
   padding: 8px 12px;
@@ -300,7 +302,7 @@ header {
   height: 275px;
   margin: 4px;
   border-radius: 4px;
-  background-color: #7b9acc;
+  background-color: black;
   justify-content: center;
   align-items: center;
   padding: 8px 12px;
@@ -312,7 +314,7 @@ header {
 }
 
 .result {
-  background-color: #2bae66;
+  background-color: rgb(13, 155, 0);
   color: #fcf6f5;
   font-size: 24px;
   font-weight: bold;
@@ -324,7 +326,7 @@ header {
 }
 
 .result:hover {
-  background-color: #155833;
+  background-color: black;
   transition-duration: 0.5s;
 }
 
