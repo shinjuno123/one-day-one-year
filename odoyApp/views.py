@@ -17,8 +17,14 @@ def resultpage(request):
 
     if(request.method == 'POST'):
         nickname = request.POST['nickname']
-        #닉네임 정규표현식
-        
+        #닉네임 공백 검증
+        nickname = nickname.replace(' ', '') #문자열 양쪽 공백 지우기
+        #닉네임 길이 검증
+        if len(nickname) > 8:
+            nickname = nickname[0:7]
+
+
+
         if request.POST['gender']=="여성": 
             ngender = 'female'
         else:
@@ -31,8 +37,8 @@ def resultpage(request):
         nbirth_temp = datetime.date(int(nbirth_temp[0:4]), int(nbirth_temp[5:7]), int(nbirth_temp[8:]))
         nbirth_temp = (date.today().year - nbirth_temp.year) + 1
 
-        nbirth_patterns = re.compile('[^0-9]|[0-9]+[^0-9]|[^0-9]+[0-9]|[0-9]+[^0-9]+[0-9]|[^0-9]+[0-9]+[^0-9]') 
-        nlife_patterns = nbirth_patterns.match(nlife)
+        patterns = re.compile('[^0-9]|[0-9]+[^0-9]|[^0-9]+[0-9]|[0-9]+[^0-9]+[0-9]|[^0-9]+[0-9]+[^0-9]') 
+        nlife_patterns = patterns.match(nlife)
         
         if nlife_patterns : 
             nlife = 100
@@ -62,6 +68,7 @@ def resultpage(request):
     mytoday = date.today() #오늘 날짜 
     mylife_current_day = mytoday - mybirth #현재까지 살아온 일 수 계산 ex) 오늘 날짜에서 생년월일 빼기, 2021,01,14 - 2021,01,01 => 13일
     mylife_current_day_time_sec = mylife_current_day.days * day_time_sec #현재까지 시간(초) ex) 13일 * 86400초(1day)
+    
     try:
         mylife_percentage = round(mylife_current_day_time_sec / mylife_time_sec * 100.0, 2) #수명까지의 비율 ex) (13*86400 / 365*86400 * 100.0)
     except ZeroDivisionError:
@@ -69,7 +76,6 @@ def resultpage(request):
     mylife_time_oneday = round(mylife_percentage * day_time_sec * 1/100, 0) #나의 하루 시간 ex) 
     mylife_time_oneday_str = str(datetime.timedelta(seconds=mylife_time_oneday)) #나의 현재 시간
  
-    
     #일년으로 계산
     year_time_sec = day_time_sec * 365.2425
     default_year = datetime.date(1,1,1)
