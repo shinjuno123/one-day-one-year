@@ -4,21 +4,19 @@
   box-sizing: border-box;
 }
 
-
-body,html{
+body,
+html {
   height: 100%;
   width: 100%;
 }
-
-
-
 
 body {
   margin: 0;
   overflow: scroll;
   font-family: "Roboto";
   transition: background-image 2s ease-in-out;
-  background: url('/static/odoyApp/images/wallpapers/jan_mor.jpg') no-repeat center fixed;
+  background: url("/static/odoyApp/images/wallpapers/jan_mor.jpg") no-repeat
+    center fixed;
   background-size: cover;
 }
 
@@ -32,14 +30,14 @@ body {
 }
 
 .result-ment {
-  background: #2bae66;
+  background: #2c5f2d;
   border-radius: 5px;
   margin-top: 70px;
   height: 43px;
 }
 
 .result-ment1 {
-  background: #2bae66;
+  background: #2c5f2d;
   position: relative;
   border-radius: 5px;
   margin-top: 17px;
@@ -116,7 +114,7 @@ body {
   width: calc(var(--width, 0) * 1%);
   min-width: 2rem;
   max-width: calc(100% - 1em);
-  background-color: #2bae66;
+  background-color: #2c5f2d;
   border-radius: 0.2em;
   padding: 1em;
   white-space: nowrap;
@@ -141,7 +139,7 @@ body {
   width: calc(var(--width, 0) * 1%);
   min-width: 2rem;
   max-width: calc(100% - 1em);
-  background-color: #2bae66;
+  background-color: #2c5f2d;
   border-radius: 0.2em;
   padding: 1em;
   white-space: nowrap;
