@@ -64,7 +64,7 @@ label {
   border-bottom-left-radius: 3px;
   z-index: 1;
   clip: rect(0px, 250px, 0px, 0px);
-  margin-top: 54px;
+  margin-top: 48px;
 }
 
 #share {
@@ -175,7 +175,7 @@ header {
   display: flex;
   position: sticky;
   top: 0;
-  height: 5%;
+  height: 20%;
   align-items: center;
   justify-content: space-between;
   padding: 8px 24px;
