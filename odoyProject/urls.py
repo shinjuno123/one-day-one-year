@@ -16,18 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from odoyApp import views
-from django.conf import settings
-from django.conf.urls import url, include
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.odoymain, name='odoymain'),
     path("result-page/",views.resultpage, name="resultpage")  
 ]
-
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    ]
