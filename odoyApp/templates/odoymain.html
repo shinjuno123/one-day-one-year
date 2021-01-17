@@ -10,6 +10,13 @@ runserver {% endcomment %} -->
       content="width=device-width, initial-scale=1.0,user-scalable=no"
     />
     <title>One day one year</title>
+    <!-- normalize css -->
+    <link
+    rel="stylesheet"
+    href="../static/odoyApp/normalize.css"
+    type="text/css"
+   />
+    <!-- css -->
     <link
       rel="stylesheet"
       href="../static/odoyApp/odoymain.css"
@@ -25,6 +32,7 @@ runserver {% endcomment %} -->
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+  
   </head>
 
   <body onload="changeBg()" id="body">
@@ -79,9 +87,9 @@ runserver {% endcomment %} -->
 
       <!-- Website Definition -->
       <div class="definition">
-        <label id="title"> How did you live your life? </label>
+        <label id="title"> How are you living your life? </label>
         <label id="subtitle">
-          It tells all of the world the value of past time.
+          This website tells people around the world the value of time.
           <br />See how you have been able to use your time in the past
           <br />and how you can live in the future.
         </label>
@@ -101,36 +109,40 @@ runserver {% endcomment %} -->
             />
           </div>
 
-          <div class="visitAndtime">
-            <div class="visitdiv">
-              <label id="allvisitants">총 몇 명</label>
-              <label id="visitants">방문자 수</label>
+          <div class="remainAndcurrentAndlast">
+            <div class="lastTimediv">
+              <span id="lastTime">올해 지난 시간</span>
+              <span id="lastTimelbl"></span>
             </div>
-            <div class="timediv">
-              <label onload="printClock()" id="timelbl"></label>
-              <label id="currenttime">현재 시간</label>
+            <div class="currentTimediv">
+              <span id="currentTime">현재 시간</span>
+              <span onload="printClock()" id="currentTimelbl"></span>
+            </div>
+            <div class="remainTimediv">
+              <span id="remainTime">올해 남은 시간</span>
+              <span id="remainTimelbl"></span>
             </div>
           </div>
         </section>
 
         <div id="information">
           <div class="infobox">
-            <section class="sex-box">
+            <section id="sexBox" class="sex-box">
               <div class="sexicon">
                 <i class="fas fa-venus-mars"></i>
               </div>
               <label><b>성별</b>은 무엇입니까?</label>
               <div>
-                <input type="radio" name="gender" value="남성" /><label
-                  >남성</label
+                <input id="male" type="radio" name="gender" value="남성" />
+                <label for="male">남성</label
                 >
-                <input type="radio" name="gender" value="여성" /><label
-                  >여성</label
+                <input id="female" type="radio" name="gender" value="여성" />
+                <label for="female">여성</label
                 >
               </div>
             </section>
 
-            <section class="birthday-box">
+            <section id="birthdayBox" class="birthday-box">
               <div class="birthicon">
                 <i class="fas fa-birthday-cake"></i>
               </div>
@@ -148,13 +160,12 @@ runserver {% endcomment %} -->
               </div>
             </section>
 
-            <section class="wantage-box">
+            <section id="wantageBox" class="wantage-box">
               <div class="wantageicon">
                 <i class="fas fa-dizzy"></i>
               </div>
               <label><b>몇 살</b>까지 살고싶으십니까?</label>
               <div>
-                `
                 <input
                   id="wantage"
                   class="text-wantage"
@@ -169,7 +180,7 @@ runserver {% endcomment %} -->
               </div>
             </section>
 
-            <!-- <label onclick="result_btn()" id="blank"></label> -->
+          <!-- <label onclick="result_btn()" id="blank"></label> -->
           </div>
           <input
             id="btnSub"
@@ -177,13 +188,54 @@ runserver {% endcomment %} -->
             type="button"
             value="결과보기"
             onclick="result_btn()"
+            onmouseover="btnchangeBg(this)"
+            onmouseout="btnnormalBg(this)"
           />
         </div>
       </main>
 
+
       <div class="addsection">
-        웹 사이트 설명란 추가할
-        <br />예정입니다.
+        <div class="famous_saying_title">
+          <span>시간과 관련된 격언들</span>
+        </div>
+        <div class="famous_saying">
+          1. Employ thy time well, if thou meanest to get leisure. (Benjamin
+          Franklin)
+          <br />여가시간을 가지려면 시간을 잘 써라. (벤자민 프랭클린)
+          <br /><br />
+
+          2. You may delay, but time will not. (Benjamin Franklin)
+          <br> 당신은 지체할 수도 있지만 시간은 그러하지 않을 것이다. (벤자민 프랭클린)
+          <br /><br />
+
+          3.Early morning hath gold in its mouth. (Benjamin Franklin)
+          <br> 이른 아침은 입에 황금을 물고 있다. (벤자민 프랭클린)
+          <br /><br>
+
+          4. Fish and visitors smell in three days. (Benjamin Franklin)
+          <br>생선과 손님은 3일이 지나면 냄새를 풍긴다. (벤자민 프랭클린)
+          <br /><br>
+
+          5. Dost thou love life? Then do not squander time, for that is the
+          stuff life is made of. (Benjamin Franklin) 
+          <br />그대는 인생을 사랑하는가? 그렇다면 시간을 낭비하지 말라, 시간이야말로 인생을 형성하는 재료이기 때문이다. (벤자민 프랭클린)
+          <br /><br />
+
+          6. I never think of the future - it comes soon enough. (Albert
+          Einstein) 
+          <br>나는 미래에 대해 생각하는 법이 없다. 어차피 곧 닥치니까.(알버트 아인슈타인)
+          <br /><br>
+
+          7. When you are courting a nice girl an hour seems like a second. When
+          you sit on a red-hot cinder a second seems like an hour. That's
+          relativity. (Albert Einstein)
+          <br> 아름다운 여자의 마음에 들려고 노력할
+          때는 1시간이 마치 1초처럼 흘러 간다. 그러나 뜨거운 난로 위에 앉아 있을
+          때는 1초가 마치 1시간처럼 느껴진다. 그것이 바로 상대성이다. (알버트
+          아인슈타인)
+          <br /><br>
+        </div>
       </div>
     </form>
     <script src="../static/odoyApp/odoymain.js"></script>

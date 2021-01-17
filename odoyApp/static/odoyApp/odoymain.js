@@ -1,48 +1,109 @@
-const clock = document.getElementById("timelbl")
+const clock = document.getElementById('currentTimelbl')
 const bodyBg = document.getElementById('body')
+const remainTime = document.getElementById('remainTimelbl')
+const lastTime = document.getElementById('lastTimelbl')
+const sexbox = document.getElementById('sexBox')
+const birthdaybox = document.getElementById('birthdayBox')
+const wantagebox = document.getElementById('wantageBox')
+const btnresult = document.getElementById('btnSub')
+
 
 // 현재시간에 맞게 배경 이미지를 바꾸는 함수(낮, 밤)
 function changeBg() {
-    var imgsrc = ""
-    var now = new Date();
-    var todayHour = now.getHours();
+    let imgsrc = ""
+    let now = new Date();
+    let todayHour = now.getHours();
     if(todayHour>=7&&todayHour<=17){
         imgsrc="../static/odoyApp/images/morning.jpg";
         bodyBg.style.backgroundImage="url('" + imgsrc + "')";
         bodyBg.style.backgroundSize="cover";
         bodyBg.style.backgroundAttachment="fixed";
+        sexbox.style.backgroundImage = "linear-gradient(-300deg, #16a085 0%, #f4d03f 100%)"
+        birthdaybox.style.backgroundImage = "linear-gradient(-300deg, #16a085 0%, #f4d03f 100%)"
+        wantagebox.style.backgroundImage = "linear-gradient(-300deg, #16a085 0%, #f4d03f 100%)"
+        btnresult.style.backgroundColor = "#34bd7b"
     }else{
         imgsrc="../static/odoyApp/images/night.jpg";
         bodyBg.style.backgroundImage="url('" + imgsrc + "')";
         bodyBg.style.backgroundSize="cover";
         bodyBg.style.backgroundAttachment="fixed";
+        sexbox.style.backgroundImage = "linear-gradient(-60deg, #ff5858 0%, #f09819 100%)"
+        birthdaybox.style.backgroundImage = "linear-gradient(-60deg, #ff5858 0%, #f09819 100%)"
+        wantagebox.style.backgroundImage = "linear-gradient(-60deg, #ff5858 0%, #f09819 100%)"
+        btnresult.style.backgroundColor = "#f9683a"
     }
 }
 
-// 현재시간을 출력하는 함수
-function printClock() {
-    var currentTime = new Date();
-    var calendar = currentTime.getFullYear() + "-" + addZeros((currentTime.getMonth()+1),2) + "-" + addZeros(currentTime.getDate(),2) + " ";
-    var currentHours = addZeros(currentTime.getHours(),2);
-    var currentMinutes = addZeros(currentTime.getMinutes(),2);
-    var currentSeconds = addZeros(currentTime.getSeconds(),2);
+// Result Button Mouseover, Mouseout Event
+function btnchangeBg() {
+    btnresult.style.backgroundColor="black"
+    btnresult.style.transition = "0.3s"
+}
+function btnnormalBg() {
+    let btnnow = new Date();
+    let btntodayHour = btnnow.getHours();
+    if(btntodayHour>=7&&btntodayHour<=17){
+        btnresult.style.backgroundColor="#34bd7b"
+        btnresult.style.transition = "0.3s"
+    }else{
+        btnresult.style.backgroundColor="#f9683a"
+        btnresult.style.transition = "0.3s"
+    }
+}
 
-    clock.innerHTML = calendar + currentHours + ":" + currentMinutes + ":" + currentSeconds;
+// 올 해 남은 시간과 현재시간을 출력하는 함수
+function printClock() {
+    let now = new Date();
     
+    // 지난 시간 다루는 부분
+    let startYear = new Date(now.getFullYear(), 0, 1);
+    let last_timegap = now.getTime() - startYear.getTime();
+    
+    let resultLDates = Math.floor(last_timegap/(1000 * 60 * 60 * 24));
+    last_timegap -= resultLDates * (1000*60*60*24);
+    let resultLHours = Math.floor(last_timegap/(1000*60*60));
+    last_timegap -= resultLHours * (1000*60*60);
+    let resultLMinutes = Math.floor(last_timegap/(1000*60));
+    last_timegap -= resultLMinutes *(1000*60);
+    let resultLSecond = Math.floor(last_timegap/1000);
+    
+    // 현재 시간 다루는 부분
+    let calendar = now.getFullYear() + "-" + addZeros((now.getMonth()+1),2) + "-" + addZeros(now.getDate(),2) + " ";
+    let currentHours = addZeros(now.getHours(),2);
+    let currentMinutes = addZeros(now.getMinutes(),2);
+    let currentSeconds = addZeros(now.getSeconds(),2);
+
+    // 남은 시간 다루는 부분
+    let endYear = new Date(now.getFullYear(), 11, 32) ;
+    let remain_timegap = endYear.getTime() - now.getTime();
+
+    let resultRDates = Math.floor(remain_timegap/(1000 * 60 * 60 * 24));
+    remain_timegap -= resultRDates * (1000*60*60*24);
+    let resultRHours = Math.floor(remain_timegap/(1000*60*60));
+    remain_timegap -= resultRHours * (1000*60*60);
+    let resultRMinutes = Math.floor(remain_timegap/(1000*60));
+    remain_timegap -= resultRMinutes *(1000*60);
+    let resultRSecond = Math.floor(remain_timegap/1000);
+
+
+    // 지난 시간
+    lastTime.innerHTML = resultLDates + "일 " + resultLHours + "시 " + resultLMinutes + "분 " + resultLSecond + "초 ";
+    // 현재 시간
+    clock.innerHTML = calendar + currentHours + ":" + currentMinutes + ":" + currentSeconds;
+    // 남은 시간
+    remainTime.innerHTML = resultRDates + "일 " + resultRHours + "시 " + resultRMinutes + "분 " + resultRSecond + "초 ";
+
     setTimeout("printClock()",1000);
 }
 
 // Max Date
 function maxDate(){ 
-    var date = new Date();
-    var year = date.getFullYear() + "-" + addZeros((date.getMonth()+1),2) + "-" + addZeros(date.getDate(),2);
+    let date = new Date();
+    let year = date.getFullYear() + "-" + addZeros((date.getMonth()+1),2) + "-" + addZeros(date.getDate(),2);
 
     document.getElementById("birthId").max = year;
 
 }
-
-// Max Age
-// function maxAge
 
 window.onload = function() {
     printClock();
@@ -52,7 +113,7 @@ window.onload = function() {
 
 // 시간이 1의 자리일 때 0을 추가하여 두자리 수로 보이게 하기 위함
 function addZeros(num, digit) {
-    var zero ="";
+    let zero ="";
     num = num.toString();
     if(num.length < digit) {
         for(i = 0; i<digit-num.length; i++){
@@ -64,13 +125,12 @@ function addZeros(num, digit) {
 
 // 결과보기 버튼 이벤트
 function result_btn() {
-    var nickname = document.getElementById('nicknameid').value;
-    var gender = document.getElementsByName('gender')
-    var genisCheck = gender.checked;
-    var birthday = document.getElementById('birthId').value;
-    var life = document.getElementById('wantage').value
-    var blankBox = document.getElementById('blank')
-    var blankString = "";
+    let nickname = document.getElementById('nicknameid').value;
+    let gender = document.getElementsByName('gender')
+    let genisCheck = gender.checked;
+    let birthday = document.getElementById('birthId').value;
+    let life = document.getElementById('wantage').value
+
 
     //-------------Gender 관련---------------
     if(gender.length==null){
@@ -99,7 +159,7 @@ function result_btn() {
     // }
     
     if(nickname==""||!genisCheck||birthday==""||life==""){
-        alert("내용을 모두 입력해주세요");
+        alert("내용을 옳바르게 입력하였는지 확인해주세요.");
     }else{
         alert("결과를 확인하세요.");
         document.getElementById('formId').submit();

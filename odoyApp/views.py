@@ -23,14 +23,21 @@ def resultpage(request):
         if len(nickname) > 8:
             nickname = nickname[0:7]
 
-
-
         if request.POST['gender']=="여성": 
             ngender = 'female'
         else:
             ngender = 'male'
     #life 값이 생년월일보다 작거나, 임의값을 넣을 경우
         nbirth = request.POST['birth']
+        patterns = re.compile['[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]']
+        nbirth_patterns = patterns.match(nbirth)
+
+        if nbirth_patterns :
+            if int(nbirth[5:7]) > 12:
+                nbirth.replace(nbirth[5:7], str(date.today().month))
+            elif int(nbirth[8:]) > 32:
+                nbirth.replace(nbirth[8:], str(date.today().day))
+        
         nlife = request.POST['life']
         nbirth_temp = nbirth
         nbirth_temp = nbirth_temp.replace('-',',')
