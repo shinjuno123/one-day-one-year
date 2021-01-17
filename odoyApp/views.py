@@ -29,15 +29,33 @@ def resultpage(request):
             ngender = 'male'
     #life 값이 생년월일보다 작거나, 임의값을 넣을 경우
         nbirth = request.POST['birth']
-        patterns = re.compile['[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]']
-        nbirth_patterns = patterns.match(nbirth)
 
-        if nbirth_patterns :
-            if int(nbirth[5:7]) > 12:
-                nbirth.replace(nbirth[5:7], str(date.today().month))
-            elif int(nbirth[8:]) > 32:
-                nbirth.replace(nbirth[8:], str(date.today().day))
-        
+        def birth_check(year, month, day):
+            month_dict = {4:30, 6:30, 9:30, 11:30, 2:28}
+            day_set = month_dict.get(month, 31)
+            
+            if day_set == 28:
+                if year % 4 == 0:
+                    if year % 100 == 0:
+                        if year % 400 == 0:
+                            day_set = 29
+                    else:
+                        day_set = 29
+            
+            if day <= day_set:
+                return True
+            return False
+
+        date_regex = re.compile(r"([12]\d{3})-(0\d|[0-2])-([0-2]\d|3[01])")
+        nbirth_patterns = date_regex.search(nbirth)
+        valid = False
+
+        if nbirth_patterns:
+            year = int(nbirth[0:4])
+            month = int(nbirth[5:7])
+            day = int(nbirth[8:])
+            valid = birth_check(year, month, day)
+
         nlife = request.POST['life']
         nbirth_temp = nbirth
         nbirth_temp = nbirth_temp.replace('-',',')
