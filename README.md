@@ -26,8 +26,8 @@ https://user-images.githubusercontent.com/72008909/208665660-990d8667-50e0-4037-
 - Right square box is asking you the age you want to die. EX) 75 -> You want to live until age 75
 - Under the 3 squares, There is a button. The button is for going to a result page.
 - In result page, It describes the position of your age if we expressed a age as 24 hours or a year based on the lifespan age you wrote.
-- Next secion in the result page is about how many books you could read since 12 years old.
-- Next secion in the result page is about how much money you could save since 12 years old.
+- Next section in the result page is about how many books you could read since 12 years old.
+- Next section in the result page is about how much money you could save since 12 years old.
 - A chart to describe how long people want to live.
 
 ## How to start
